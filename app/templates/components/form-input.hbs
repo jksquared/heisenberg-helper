@@ -1,0 +1,11 @@
+<div class="form-group has-feedback
+  {{if (get changeset.error property) "has-error"}}">
+  <input type="{{type}}" class="form-control" placeholder="{{label}}"
+         value={{get changeset property}}
+         oninput={{action (mut (get changeset property)) value="target.value"}}>
+  {{yield}}
+
+  {{#each (get (get changeset.error property) 'validation') as |error|}}
+    <span class="help-block">{{error}}</span>
+  {{/each}}
+</div>
