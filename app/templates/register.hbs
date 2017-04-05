@@ -1,20 +1,42 @@
+<div class="section--nb">
+  <div class="container">
 
-<h1>Title</h1>
-<div>Welcome to Heisenberg Helper!</div>
-<img src="https://www.bettycrocker.com/-/media/legacy/Images/ProductPages/Hamburger-Helper/Landing-Page/Cheeseburger-Macaroni.jpg?W=800" alt="">
-<p>You can use this site to track your habits!</p>
+    <h1 class="title--nb">Heisenberger Helper</h1>
+    <div class="grid--nb">
 
-<div class="card-thing">
-<div>Register</div>
-<div>Name
-  <input type="text" placeholder="name">
+      <div class="row">
+        <div class="left--nb col align-self-center">
+          <h3>Welcome to Heisenberger Helper!</h3>
+          <img src="https://s-media-cache-ak0.pinimg.com/736x/63/0f/0e/630f0ef3f6f3126ca11f19f4a9b85243.jpg" alt="" class="pic--nb">
+          <p>You can use this site to track your habits!</p>
+        </div>
+
+        <div class="right--nb col col-md-auto">
+          <form {{action "registerUser" on="submit"}}>
+            <h3>Register</h3>
+            <div>
+              <label for="name">Name</label> {{input type="text" value=formValues.name placeholder="name"}}
+            </div>
+            <div>
+              <label for="email">Email</label> {{input type="text" value=formValues.email placeholder="email"}}
+            </div>
+            <div>
+              <label for="password">Password</label> {{input type="password" value=formValues.password placeholder="password"}}
+            </div>
+            <small class="text-muted">(Password must be at least 6 characters long.)</small>
+            <div class="bottom--nb">
+              <button class="btn btn-primary">Sign Up</button>
+              <a href="/login">Already have an account?</a>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 </div>
-<div>Email
-  <input type="text" placeholder="email">
-</div>
-<div>Password
-  <input type="text" placeholder="password">
-</div>
-<button>Sign Up</button>
-<a href="#">Already have an account?</a>
-</div>
+
+{{!-- <div class="alert alert-danger" role="alert">
+  Change a few things up and try submitting again.
+</div> --}}

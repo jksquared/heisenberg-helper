@@ -5,9 +5,11 @@ import {
 
 
 export default {
-  password: validatePresence(true),
+  name: validatePresence(true),
   email: [
     validatePresence(true),
     validateFormat({ type: 'email' }),
   ],
+  password: validatePresence(true),
+
 };

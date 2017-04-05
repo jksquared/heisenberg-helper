@@ -3,12 +3,13 @@ import validator from './validator';
 
 export default Ember.Controller.extend({
   validator,
+  formValues: {},
   actions: {
-    async saveUser(changeset) {
+    async registerUser(changeset) {
       await changeset.validate();
 
       if (changeset.get('isInvalid')) {
-        return alert('Make better decisions with this form');
+        return alert('Please fill in the input fields');
       }
 
       await changeset.save();
