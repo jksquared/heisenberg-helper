@@ -1,17 +1,42 @@
-<div class="d-flex align-items-center">
-<div class="container w-25 p-3">
-  <form action="">
-    <h1 class="title text-center">Log In</h1>
-    <div class="form-group row">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+<div>
+  <div class="container w-25 p-3">
+    {{#with (changeset model validator) as |formValues|}}
+    <form {{action "loginUser" formValues on="submit"}}>
+      <h1 class="title text-center">Log In</h1>
+      <div class="form-group">
+        {{!-- <label for="exampleInputEmail1">Email address</label> --}}
+        {{#form-input changeset=formValues class="form-control" label="Email address" property="email"}}{{/form-input}}
+      </div>
+      <div class="form-group">
+        {{!-- <label for="exampleInputPassword1">Password</label> --}}
+        {{#form-input changeset=formValues type="password" label="Password" property="password"}}{{/form-input}}
+     </div>
+    <div class="form-group d-flex justify-content-between align-items-end">
+      <button type="submit" class="btn btn-primary btn-block btn-flat">Submit</button>
     </div>
-    <div class="form-group row">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-   </div>
-   <button type="submit" class="btn btn-primary">Submit</button>
-   <span>Need an account? {{#link-to}}Register Here{{/link-to}}</span>
+    </form>
+    {{/with}}
+    <p>
+    <span>Need an account? {{#link-to 'register'}} Register Here{{/link-to}}</span>
+
+    </p>
+  </div>
+</div>
+
+
+
+{{!-- {{#with (changeset model validator) as |formValues|}}
+  <form {{action "loginUser" formValues on="submit"}}>
+    {{#form-input changeset=formValues label="Email" property="email"}}
+      <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+    {{/form-input}}
+
+    {{#form-input changeset=formValues type="password" label="Password" property="password"}}
+      <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+    {{/form-input}}
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
+    </div>
   </form>
-</div>
-</div>
+{{/with}} --}}
