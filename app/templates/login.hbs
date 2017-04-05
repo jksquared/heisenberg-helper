@@ -1,1 +1,17 @@
-<h2>Hello World</h2>
+<div class="d-flex align-items-center">
+<div class="container w-25 p-3">
+  <form action="">
+    <h1 class="title text-center">Log In</h1>
+    <div class="form-group row">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+    <div class="form-group row">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+   </div>
+   <button type="submit" class="btn btn-primary">Submit</button>
+   <span>Need an account? {{#link-to}}Register Here{{/link-to}}</span>
+  </form>
+</div>
+</div>
