@@ -1,16 +1,16 @@
 <div class="container">
   <div class="section">
+
     <div class="row justify-content-between">
-      <div class="card col col-sm-3" style="margin: 1rem 0;">
+      <div class="card col col-sm-2" style="margin: 1rem;">
         <h4 class="card--words" >Hi, user!</h4>
         {{!-- {{something.user}} --}}
         <button class="btn btn-primary">+Add New Item</button>
         {{!-- {{#link-to "???" class="button"}}+Add New Item{{/link-to}} --}}
-
       </div>
 
-      <div class="card col col-sm-3" style="margin: 1rem 0;">
-        <h4 class="card--words" >Done here?</h4>
+      <div class="card col col-sm-2" style="margin: 1rem;">
+        <h4 class="card--words">Done here?</h4>
         <button class="btn btn-primary">Log out</button>
         {{!-- {{#link-to "???" class="button"}}Log out{{/link-to}} --}}
       </div>
@@ -21,9 +21,9 @@
     <h4 class="card-header">Table Heading</h4>
     <div class="card-block">
       <table class="table">
-  {{!-- {{#each item as |value|}}
+  {{!-- {{#each item as |value|}} --}}
 
-  {{/each}} --}}
+
         <thead>
           <tr>
             <th>Item</th>
@@ -33,53 +33,59 @@
             <th>Delete</th>
           </tr>
         </thead>
+
         <tbody>
+          {{!-- {{#each item as |value|}} --}}
           <tr>
             <td>Facebook</td>
             <td>Social Media</td>
             <td>See More</td>
-            <td>Time</td>
-            <td>x</td>
+            <td>Add Time</td>
+            <td>x</td>{{!-- modal to confirm delete --}}
           </tr>
+          {{!-- {{/each}} --}}
           <tr>
             <td>Instagram</td>
             <td>Social Media</td>
             <td>See More</td>
-            <td>Time</td>
+            <td>Add Time</td>
             <td>x</td>
           </tr>
+
           <tr>
             <td>Twitter</td>
             <td>Social Media</td>
             <td>See More</td>
-            <td>Time</td>
+            <td>Add Time</td>
             <td>x</td>
           </tr>
           <tr>
             <td>yoga</td>
             <td>Exercise</td>
             <td>See More</td>
-            <td>Time</td>
+            <td>Add Time</td>
             <td>x</td>
           </tr>
 
 
         </tbody>
+
       </table>
     </div>
   </div>
 
 <div class="row">
-  <div class="card col" style="width: 20rem; margin: 1rem 0;">
+  {{!-- modal for time card after the Add Time link is clicked --}}
+  <div class="card col" style="margin: 1rem; padding: 0 -1rem;">
   <div class="card-block">
     <h4 class="card-title">Add Time</h4>
-    <p class="card-text">Click on an Item above. Then enter an amount of time (in minutes) you spent on that item in the input field below, and click the button to add the time to the item.</p>
+    <p class="card-text">Click on the Add Time link for an Item above. Then enter an amount of time (in minutes) you spent on that item in the input field below, and click the button to add the time to the item.</p>
     <input class="form-control" type="number" placeholder="add minutes">
     <button type="submit" name="button" class="btn btn-primary" style="margin: 1rem 0 0;">Add Time</button>
   </div>
 </div>
 
-  <div class="card col" style="width: 20rem; margin: 1rem 0;">
+  <div class="card col" style="margin: 1rem; padding: 0 -1rem;">
     <img class="card-img-top" src="http://s2.dmcdn.net/MKoQw/1280x720-DWQ.jpg" alt="pie chart">
   </div>
 </div>
