@@ -2,7 +2,10 @@
 'use strict';
 
 module.exports = function(environment) {
-  let ENV = {
+  const ENV = {
+    DS: {
+      host: 'http://localhost:3333',
+    },
     modulePrefix: 'heisenberg-helper',
     environment,
     rootURL: '/',
@@ -46,6 +49,13 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
+
+  ENV['ember-simple-auth'] = {
+    authorizer: 'authorizer:token'
+  };
+  ENV['ember-simple-auth-token'] = {
+    serverTokenEndpoint: `${ENV.DS.host}/token-auth`,
+  };
 
   return ENV;
 };
