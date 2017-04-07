@@ -3,6 +3,7 @@
     {{#with (changeset model validator) as |formValues|}}
     <form {{action "loginUser" formValues on="submit"}}>
       <h1 class="title text-center">Log In</h1>
+      <h2>{{errorMessage}}</h2>
       <div class="form-group">
         {{!-- <label for="exampleInputEmail1">Email address</label> --}}
         {{#form-input changeset=formValues class="form-control" label="Email address" property="email"}}{{/form-input}}

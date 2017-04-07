@@ -16,10 +16,15 @@ export default Ember.Controller.extend({
 
       await changeset.save();
 
-      await this.get('session').authenticate('authenticator:token', {
-        identification: this.get('model.email'),
-        password: this.get('model.password'),
-      });
+      try {
+        await this.get('session').authenticate('authenticator:token', {
+          identification: this.get('model.email'),
+          password: this.get('model.password'),
+        });
+      } catch (err) {
+        this.set('errorMessage', err.error.message);
+      }
+
     },
   },
 });
