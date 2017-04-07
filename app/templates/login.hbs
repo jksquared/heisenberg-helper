@@ -1,4 +1,4 @@
-<div>
+<div class="wrapper-nb">
   <div class="container w-25 p-3">
     {{#with (changeset model validator) as |formValues|}}
     <form {{action "loginUser" formValues on="submit"}}>

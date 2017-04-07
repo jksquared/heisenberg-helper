@@ -1,8 +1,14 @@
 $c-hospitalScrubs: #113B43;
-$c-justBeige: #FFDBAC;
+$c-justBeige: rgba(#f6d8b1,.67);
 $c-soiledPearl: #9C9B83;
 $c-paleCarrot: #FF974F;
 $c-lobsterBisque: #E04825;
 
 @import "ember-bootstrap/bootstrap";
 @import 'reset';
+
+
+.wrapper-nb {
+  background-color: $c-justBeige;
+  height: 100vh;
+}
