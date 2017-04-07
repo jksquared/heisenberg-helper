@@ -11,25 +11,28 @@
           <p>You can use this site to track your habits!</p>
         </div>
 
-        <div class="right--nb col col-md-auto">
-          <form {{action "registerUser" on="submit"}}>
-            <h3>Register</h3>
-            <div>
-              <label for="name">Name</label> {{input type="text" value=formValues.name placeholder="name"}}
-            </div>
-            <div>
-              <label for="email">Email</label> {{input type="text" value=formValues.email placeholder="email"}}
-            </div>
-            <div>
-              <label for="password">Password</label> {{input type="password" value=formValues.password placeholder="password"}}
-            </div>
-            <small class="text-muted">(Password must be at least 6 characters long.)</small>
-            <div class="bottom--nb">
-              <button class="btn btn-primary">Sign Up</button>
-              <a href="/login">Already have an account?</a>
-            </div>
-          </form>
-        </div>
+        {{#with (changeset model) as |formValues|}}
+          <div class="right--nb col col-md-auto">
+            <form {{action "registerUser" formValues on="submit"}}>
+              <h3>Register</h3>
+              <div>
+                <label for="name">Name</label> {{input type="text" value=formValues.name placeholder="name"}}
+              </div>
+              <div>
+                <label for="email">Email</label> {{input type="text" value=formValues.email placeholder="email"}}
+              </div>
+              <div>
+                <label for="password">Password</label> {{input type="password" value=formValues.password placeholder="password"}}
+              </div>
+              <small class="text-muted">(Password must be at least 6 characters long.)</small>
+              <div class="bottom--nb">
+                <button class="btn btn-primary">Sign Up</button>
+                <a href="/login">Already have an account?</a>
+              </div>
+            </form>
+          </div>
+        {{/with}}
+
       </div>
 
     </div>
