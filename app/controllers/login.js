@@ -18,14 +18,14 @@ export default Ember.Controller.extend({
 
       this.transitionToRoute('dashboard');
 
-      // try {
-      //   await this.get('session').authenticate('authenticator:token', {
-      //     identification: this.get('model.email'),
-      //     password: this.get('model.password'),
-      //   });
-      // } catch (err) {
-      //   this.set('errorMessage', err.error.message);
-      // }
+      try {
+        await this.get('session').authenticate('authenticator:token', {
+          identification: this.get('model.email'),
+          password: this.get('model.password'),
+        });
+      } catch (err) {
+        this.set('errorMessage', err.error.message);
+      }
     },
   },
 });
