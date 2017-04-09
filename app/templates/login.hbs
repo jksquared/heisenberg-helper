@@ -12,15 +12,15 @@
         {{!-- <label for="exampleInputPassword1">Password</label> --}}
         {{#form-input changeset=formValues type="password" label="Password" property="password"}}{{/form-input}}
      </div>
-    <div class="form-group d-flex justify-content-between align-items-end">
-      <button type="submit" class="btn btn-primary btn-block btn-flat">Submit</button>
-    </div>
+      <div class="form-group d-flex justify-content-between align-items-end">
+        <button type="submit" class="btn btn-block btn-flat">Submit</button>
+      </div>
+      <p>
+        Need an account? {{#link-to 'register' class="register"}} Register Here{{/link-to}}
+      </p>
     </form>
     {{/with}}
-    <p>
-    <span>Need an account? {{#link-to 'register'}} Register Here{{/link-to}}</span>
 
-    </p>
   </div>
 </div>
 

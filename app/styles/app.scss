@@ -6,9 +6,9 @@ $c-lobsterBisque: #E04825;
 
 @import "ember-bootstrap/bootstrap";
 @import 'reset';
+@import 'login';
+@import 'register';
 
-
-.wrapper-nb {
-  background-color: $c-justBeige;
-  height: 100vh;
+* {
+  font-family: 'Amatica SC', cursive;
 }
