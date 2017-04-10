@@ -13,6 +13,10 @@ export default Ember.Controller.extend({
       this.transitionToRoute('dashboard.index');
       // transitionToRoute needs to be changed to wait for the add item button to be clicked.
       // This is activating the closeOutlet function.
+    },
+
+    deleteContact(contact) {
+      contact.destroyRecord();
     }
   }
 });

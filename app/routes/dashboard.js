@@ -14,6 +14,6 @@ export default Ember.Route.extend({
         outlet: 'modal',
         parentView: 'dashboard'
       });
-    }
+    },
   }
 });

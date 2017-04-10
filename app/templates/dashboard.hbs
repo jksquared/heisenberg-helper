@@ -5,7 +5,7 @@
     <div class="row justify-content-between">
       <div class="card col col-sm-2" style="margin: 1rem;">
         <h4 class="card--words">Hi, user!</h4>
-        <button class="btn btn-primary" {{action 'openModal' 'add-item'}}>+Add New Item</button>
+        <button class="btn btn-primary" {{action 'openModal' 'add-item'}}>Add New Item</button>
       </div>
 
       <div class="card col col-sm-2" style="margin: 1rem;">
@@ -21,30 +21,33 @@
       </h4>
 
       <div class="card-block">
+      {{!-- {{#each item as |value|}} --}}
+
 
         {{#bs-accordion as |acc|}}
           {{#acc.item value=1 title="Facebook"}}
             <p>Category: </p>
             <p>Times: </p>
-
             <button class="btn btn-primary">future add time button</button>
-            <button class="btn btn-danger">future delete item button</button>
+            <button class="btn btn-danger" {{action "deleteItem" item}}>future delete item button</button>
           {{/acc.item}}
+
           {{#acc.item value=2 title="Twitter"}}
             <p>Category: </p>
             <p>Times: </p>
-
             <button class="btn btn-primary">future add time button</button>
-            <button class="btn btn-danger">future delete item button</button>          {{/acc.item}}
+            <button class="btn btn-danger">future delete item button</button>
+            {{/acc.item}}
+
           {{#acc.item value=3 title="Youtube"}}
             <p>Category: </p>
             <p>Times: </p>
-
             <button class="btn btn-primary">future add time button</button>
             <button class="btn btn-danger">future delete item button</button>
           {{/acc.item}}
 
         {{/bs-accordion}}
+        {{!-- {{/each}} --}}
       </div>
     </div>
 
