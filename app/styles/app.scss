@@ -4,6 +4,8 @@ $c-soiledPearl: #9C9B83;
 $c-paleCarrot: #FF974F;
 $c-lobsterBisque: #E04825;
 
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
 @import "ember-bootstrap/bootstrap";
 @import 'reset';
 @import 'login';
