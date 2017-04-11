@@ -1,13 +1,14 @@
+{{outlet 'modal'}}
 <div class="container">
   <div class="section">
 
     <div class="row justify-content-between">
       <div class="card col col-sm-2" style="margin: 1rem;">
-        <h4 class="card--words" >Hi, user!</h4>
-        {{!-- {{something.user}} --}}
-        <button class="btn btn-primary">+Add New Item</button>
-        {{!-- {{#link-to "???" class="button"}}+Add New Item{{/link-to}} --}}
+        <h4 class="card--words">Hi, user!</h4>
+        <button class="btn btn-primary" {{action 'openModal' 'add-item'}}>+Add New Item</button>
       </div>
+
+
 
       <div class="card col col-sm-2" style="margin: 1rem;">
         <h4 class="card--words">Done here?</h4>
