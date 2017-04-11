@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import validator from '../validators/login';
+import validator from './validator';
 // I think loginUser is failing b/c this is the wrong file path
 
 export default Ember.Controller.extend({
