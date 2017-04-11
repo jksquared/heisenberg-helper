@@ -4,5 +4,5 @@ export default DS.Model.extend({
   user: DS.attr('number'),
   item: DS.attr('string'),
   category: DS.attr('string'),
-  times: DS.hasMany('time'),
+  // times: DS.hasMany('time'),
 });

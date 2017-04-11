@@ -10,6 +10,12 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
+
+    'ember-simple-auth': {
+      authorizer: 'authorizer:token',
+      authenticationRoute: 'login',
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -50,11 +56,11 @@ module.exports = function(environment) {
 
   }
 
-  ENV['ember-simple-auth'] = {
-    authorizer: 'authorizer:token'
-  };
   ENV['ember-simple-auth-token'] = {
     serverTokenEndpoint: `${ENV.DS.host}/token-auth`,
+    tokenPropertyName: 'token',
+    refreshAccessTokens: false,
+    refreshLeeway: 200000
   };
 
   return ENV;
