@@ -4,15 +4,15 @@
                   targetAttachment="center"
                   translucentOverlay=true}}
     <div class="container">
-      {{#with (changeset newItem) as |form|}}
+      {{#with (changeset newItem) as |formValues|}}
 
         <form {{action "addItem" formValues on="submit"}}>
           <h1 class="title text-center">Add an Item</h1>
           <div class="form-group">
-            {{#form-input class="form-control" label="item" changeset=form property="item"}}{{/form-input}}
+            {{#form-input class="form-control" label="item" changeset=formValues property="item"}}{{/form-input}}
           </div>
           <div class="form-group">
-            {{#form-input class="form-control" label="category" changeset=form property="category"}}{{/form-input}}
+            {{#form-input class="form-control" label="category" changeset=formValues property="category"}}{{/form-input}}
          </div>
         <div class="form-group d-flex justify-content-between align-items-end">
           <button type="submit" class="btn btn-primary btn-block btn-flat" {{action 'addItem'}}>Add Item</button>
