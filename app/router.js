@@ -6,9 +6,14 @@ const Router = Ember.Router.extend({
   rootURL: config.rootURL
 });
 
-Router.map(function() {
+Router.map(function () {
   this.route('register');
   this.route('login');
-  this.route('dashboard');
+  this.route('dashboard'), function () {
+    this.route('items'), { path: '/:item_id' }, function () {
+      this.route('duration');
+      //  ,{????}
+    };
+  };
 });
 export default Router;
