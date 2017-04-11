@@ -13,7 +13,7 @@ module.exports = function(environment) {
 
     'ember-simple-auth': {
       authorizer: 'authorizer:token',
-      authenticationRoute: 'index',
+      authenticationRoute: 'login',
     },
 
     EmberENV: {
