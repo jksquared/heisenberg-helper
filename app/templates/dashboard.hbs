@@ -33,8 +33,6 @@
         <button class="btn btn-primary" {{action "toggleModal"}}>+Add New Item</button>
       </div>
 
-
-
       <div class="card col col-sm-2" style="margin: 1rem;">
         <h4 class="card--words">Done here?</h4>
         <button {{action 'invalidateSession'}} class="btn btn-primary">Log out</button>
@@ -42,80 +40,58 @@
       </div>
     </div>
 
+    {{!-- start of table --}}
+    <div class="card">
+      <h4 class="card-header">List of Items
+        <h6>(click on an item to see more)</h6>
+      </h4>
 
-  <div class="card">
-    <h4 class="card-header">Table Heading</h4>
-    <div class="card-block">
-      <table class="table">
-  {{!-- {{#each item as |value|}} --}}
-
-
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>Category</th>
-            <th>More Info</th>
-            <th>Add Time</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {{!-- {{#each item as |value|}} --}}
-          <tr>
-            <td>Facebook</td>
-            <td>Social Media</td>
-            <td>See More</td>
-            <td>Add Time</td>
-            <td>x</td>{{!-- modal to confirm delete --}}
-          </tr>
-          {{!-- {{/each}} --}}
-          <tr>
-            <td>Instagram</td>
-            <td>Social Media</td>
-            <td>See More</td>
-            <td>Add Time</td>
-            <td>x</td>
-          </tr>
-
-          <tr>
-            <td>Twitter</td>
-            <td>Social Media</td>
-            <td>See More</td>
-            <td>Add Time</td>
-            <td>x</td>
-          </tr>
-          <tr>
-            <td>yoga</td>
-            <td>Exercise</td>
-            <td>See More</td>
-            <td>Add Time</td>
-            <td>x</td>
-          </tr>
+      <div class="card-block">
+      {{!-- {{#each item as |value|}} --}}
 
 
-        </tbody>
+        {{#bs-accordion as |acc|}}
+          {{#acc.item value=1 title="Facebook"}}
+            <p>Category: </p>
+            <p>Times: </p>
+            <button class="btn btn-primary">future add time button</button>
+            <button class="btn btn-danger" {{action "deleteItem" item}}>future delete item button</button>
+          {{/acc.item}}
 
-      </table>
+          {{#acc.item value=2 title="Twitter"}}
+            <p>Category: </p>
+            <p>Times: </p>
+            <button class="btn btn-primary">future add time button</button>
+            <button class="btn btn-danger">future delete item button</button>
+            {{/acc.item}}
+
+          {{#acc.item value=3 title="Youtube"}}
+            <p>Category: </p>
+            <p>Times: </p>
+            <button class="btn btn-primary">future add time button</button>
+            <button class="btn btn-danger">future delete item button</button>
+          {{/acc.item}}
+
+        {{/bs-accordion}}
+        {{!-- {{/each}} --}}
+      </div>
     </div>
-  </div>
 
-<div class="row">
-  {{!-- modal for time card after the Add Time link is clicked --}}
-  <div class="card col" style="margin: 1rem; padding: 0 -1rem;">
-  <div class="card-block">
-    <h4 class="card-title">Add Time</h4>
-    <p class="card-text">Click on the Add Time link for an Item above. Then enter an amount of time (in minutes) you spent on that item in the input field below, and click the button to add the time to the item.</p>
-    <input class="form-control" type="number" placeholder="add minutes">
-    <button type="submit" name="button" class="btn btn-primary" style="margin: 1rem 0 0;">Add Time</button>
-  </div>
-</div>
+    <div class="row">
+      {{!-- modal for time card after the Add Time link is clicked --}}
+      <div class="card col" style="margin: 1rem; padding: 0 -1rem;">
+        <div class="card-block">
+          <h4 class="card-title">Add Time</h4>
+          <p class="card-text">Click on the Add Time link for an Item above. Then enter an amount of time (in minutes) you spent on that item in the input field below, and click the button to add the time to the item.</p>
+          <input class="form-control" type="number" placeholder="add minutes">
+          <button type="submit" name="button" class="btn btn-primary" style="margin: 1rem 0 0;">Add Time</button>
+        </div>
+      </div>
 
-  <div class="card col" style="margin: 1rem; padding: 0 -1rem;">
-    <img class="card-img-top" src="http://s2.dmcdn.net/MKoQw/1280x720-DWQ.jpg" alt="pie chart">
-    {{!-- piechart JS stuff --}}
-  </div>
-</div>
+      <div class="card col" style="margin: 1rem; padding: 0 -1rem;">
+        <img class="card-img-top" src="http://s2.dmcdn.net/MKoQw/1280x720-DWQ.jpg" alt="pie chart">{{!-- piechart JS stuff --}}
+      </div>
+    </div>
 
 
   </div> {{!-- section --}}
