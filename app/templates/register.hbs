@@ -1,4 +1,4 @@
-<div class="section--nb">
+<div class="wrapper-nb">
   <div class="container">
 
     <h1 class="title--nb">Heisenberger Helper</h1>
@@ -12,17 +12,17 @@
         </div>
 
         {{#with (changeset model) as |formValues|}}
-          <div class="right--nb col col-md-auto">
-            <form {{action "registerUser" formValues on="submit"}}>
+          <div class="right--nb col col-md-auto form-wrapper-nb">
+            <form class="form-nb" {{action "registerUser" formValues on="submit"}}>
               <h3>Register</h3>
-              <div>
-                <label for="name">Name</label> {{input type="text" value=formValues.name placeholder="name"}}
+              <div class="input-container-nb">
+                {{input type="text" value=formValues.name placeholder="name" class="input-nb"}}
               </div>
-              <div>
-                <label for="email">Email</label> {{input type="text" value=formValues.email placeholder="email"}}
+              <div class="input-container-nb">
+                {{input type="text" value=formValues.email placeholder="email" class="input-nb"}}
               </div>
-              <div>
-                <label for="password">Password</label> {{input type="password" value=formValues.password placeholder="password"}}
+              <div class="input-container-nb">
+                {{input type="password" value=formValues.password placeholder="password" class="input-nb"}}
               </div>
               <small class="text-muted">(Password must be at least 6 characters long.)</small>
               <div class="bottom--nb">

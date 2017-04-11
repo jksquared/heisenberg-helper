@@ -1,0 +1,38 @@
+
+.wrapper-nb {
+  background-color: $c-justBeige;
+  height: 100vh;
+  color: $c-hospitalScrubs;
+}
+
+h1 {
+  color: $c-hospitalScrubs;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+form {
+  width: 100%;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+.btn {
+  background-color: $c-soiledPearl;
+  font-family: 'Amatica SC', cursive;
+  font-size: 2rem;
+}
+
+.register {
+  color: $c-lobsterBisque;
+  font-weight: bold;
+
+}
+
+.container-nb {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

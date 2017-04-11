@@ -16,14 +16,13 @@ export default Ember.Controller.extend({
 
       await changeset.save();
 
-      this.transitionToRoute('dashboard');
-
       try {
-        await this.get('session').authenticate('authenticator:token', {
+        await this.get('session').authenticate('authenticator:jwt', {
           identification: this.get('model.email'),
           password: this.get('model.password'),
         });
       } catch (err) {
+        const e = err;
         this.set('errorMessage', err.error.message);
       }
     },
