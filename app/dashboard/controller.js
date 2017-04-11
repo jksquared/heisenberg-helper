@@ -2,21 +2,31 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   formValues: {},
+  isShowingModal: false,
+  session: Ember.inject.service(),
+
+  resetNewItem() {
+    this.set('newItem', {});
+  },
 
   actions: {
+    invalidateSession() {
+      this.get('session').invalidate();
+    },
+
     async addItem() {
       const item = this.store.createRecord('item', this.formValues);
 
       await item.save();
 
-      this.set('formValues', {});
-      this.transitionToRoute('dashboard.index');
+      this.resetNewItem();
+      this.toggleProperty('isShowingModal');
       // transitionToRoute needs to be changed to wait for the add item button to be clicked.
       // This is activating the closeOutlet function.
     },
 
-    deleteContact(contact) {
-      contact.destroyRecord();
+    toggleModal() {
+      this.toggleProperty('isShowingModal');
     }
   }
 });
