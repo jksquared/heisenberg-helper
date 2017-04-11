@@ -6,6 +6,6 @@ export default Ember.Route.extend({
       id: '1',
       firstName: 'Pad',
       lastName: 'Thai'
-    }]
+    }];
   }
 });
