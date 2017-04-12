@@ -25,31 +25,21 @@
         <div class="card-block">
         {{!-- {{#each item as |value|}} --}}
 
+        {{log model.item}}
+
 
           {{#bs-accordion as |acc|}}
-            {{#acc.item value=1 title="Facebook"}}
-              <p>Category: </p>
+          {{#each model as |newitem|}}
+            {{#acc.item value=1 title=newitem.item}}
+              <p>Category: {{newitem.category}}</p>
               <p>Times: </p>
               <button class="btn btn-primary">future add time button</button>
               <button class="btn btn-danger" {{action "deleteItem" item}}>future delete item button</button>
             {{/acc.item}}
 
-            {{#acc.item value=2 title="Twitter"}}
-              <p>Category: </p>
-              <p>Times: </p>
-              <button class="btn btn-primary">future add time button</button>
-              <button class="btn btn-danger">future delete item button</button>
-              {{/acc.item}}
-
-            {{#acc.item value=3 title="Youtube"}}
-              <p>Category: </p>
-              <p>Times: </p>
-              <button class="btn btn-primary">future add time button</button>
-              <button class="btn btn-danger">future delete item button</button>
-            {{/acc.item}}
-
+            {{/each}}
           {{/bs-accordion}}
-          {{!-- {{/each}} --}}
+
         </div>
       </div>
 
