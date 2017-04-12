@@ -1,23 +1,29 @@
 <div class="wrapper-nb">
-  <div class="container-nb container w-25 p-3">
+  <div class="background-img-sm"></div>
+  <div class="background-img"></div>
+
+  <div class="container-nb container">
+    <div class="btn-container">
+      {{#link-to 'register' class="btn btn-register"}}Register{{/link-to}}
+      <button type="submit" class="btn btn-login">Log In</button>
+    </div>
     {{#with (changeset model validator) as |formValues|}}
-    <form {{action "loginUser" formValues on="submit"}}>
-      <h1 class="title text-center">Log In</h1>
+    <form class="form-nb"{{ action "loginUser" formValues on="submit"}}>
       <h2>{{errorMessage}}</h2>
       <div class="form-group">
         {{!-- <label for="exampleInputEmail1">Email address</label> --}}
-        {{#form-input changeset=formValues class="form-control" label="Email address" property="email"}}{{/form-input}}
+        {{input changeset=formValues class="input-nb" placeholder="Email Address" label="Email address" property="email"}}
       </div>
       <div class="form-group">
         {{!-- <label for="exampleInputPassword1">Password</label> --}}
-        {{#form-input changeset=formValues type="password" label="Password" property="password"}}{{/form-input}}
+        {{input class="input-nb" changeset=formValues type="password" placeholder="Password" label="Password" property="password"}}
      </div>
-      <div class="form-group d-flex justify-content-between align-items-end">
-        <button type="submit" class="btn btn-block btn-flat">Submit</button>
+      <div class=" bottom-container">
+        <button type="submit" class="btn btn-next">Next</button>
+        <p>
+          Need an account? {{#link-to 'register' class="register"}} Register Here{{/link-to}}
+        </p>
       </div>
-      <p>
-        Need an account? {{#link-to 'register' class="register"}} Register Here{{/link-to}}
-      </p>
     </form>
     {{/with}}
 
