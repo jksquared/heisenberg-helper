@@ -7,5 +7,9 @@ export default Ember.Controller.extend({
     invalidateSession() {
       this.get('session').invalidate();
     },
+
+    deleteItem(item) {
+      item.destroyRecord();
+    }
   }
 });
