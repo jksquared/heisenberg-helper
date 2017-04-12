@@ -6,7 +6,7 @@ export default Ember.Route.extend({
 
   beforeModel() {
     if (!this.get('session.isAuthenticated')) {
-      alert('You must be logged in to visit this page');
+      // alert('Register for an account or login here');
 
       this.transitionTo('login');
     }
