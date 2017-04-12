@@ -19,6 +19,6 @@ export default Ember.Controller.extend({
 
     toggleModal() {
       this.transitionToRoute('dashboard');
-    }
+    },
   }
 });
