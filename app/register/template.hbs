@@ -11,18 +11,15 @@
           <p>You can use this site to track your habits!</p>
         </div>
 
-        {{#with (changeset model) as |formValues|}}
+        {{#with (changeset model validator) as |formValues|}}
           <div class="right--nb col col-md-auto form-wrapper-nb">
             <form class="form-nb" {{action "registerUser" formValues on="submit"}}>
               <h3>Register</h3>
               <div class="input-container-nb">
-                {{input type="text" value=formValues.name placeholder="name" class="input-nb"}}
+                {{#form-input changeset=formValues class="form-control" label="Email address" property="email"}}{{/form-input}}
               </div>
               <div class="input-container-nb">
-                {{input type="text" value=formValues.email placeholder="email" class="input-nb"}}
-              </div>
-              <div class="input-container-nb">
-                {{input type="password" value=formValues.password placeholder="password" class="input-nb"}}
+                {{#form-input changeset=formValues type="password" label="Password" property="password"}}{{/form-input}}
               </div>
               <small class="text-muted">(Password must be at least 6 characters long.)</small>
               <div class="bottom--nb">
