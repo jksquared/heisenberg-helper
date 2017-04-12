@@ -9,11 +9,11 @@ const Router = Ember.Router.extend({
 Router.map(function () {
   this.route('register');
   this.route('login');
-  this.route('dashboard'), function () {
-    this.route('items'), { path: '/:item_id' }, function () {
-      this.route('duration');
-      //  ,{????}
-    };
-  };
+  this.route('dashboard', function () {
+    this.route('item', { path: '/items' }, function () {
+      this.route('new');
+      this.route('detail', { path: '/:item_id' });
+    });
+  });
 });
 export default Router;
