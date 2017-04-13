@@ -15,19 +15,18 @@
         </div>
       </div>
 
-      {{!-- start of table --}}
+
       <div class="card">
         <h4 class="card-header">List of Items
           <h6>(click on an item to see more)</h6>
         </h4>
-
         <div class="card-block">
           {{#bs-accordion as |acc|}}
           {{#each model as |newitem|}}
             {{#acc.item value=newitem.id title=newitem.item}}
               <p>Category: {{newitem.category}}</p>
               <p>Times: </p>
-              <button class="btn btn-primary">future add time button</button>
+              {{#link-to "dashboard.item.detail" item.id class="btn btn-primary"}}Add New Time{{/link-to}}
               <button class="btn btn-danger" {{action "deleteItem" newitem}}>future delete item button</button>
             {{/acc.item}}
 
@@ -37,21 +36,21 @@
         </div>
       </div>
 
-      <div class="row">
-        {{!-- modal for time card after the Add Time link is clicked --}}
-        <div class="card col" style="margin: 1rem; padding: 0 -1rem;">
-          <div class="card-block">
-            <h4 class="card-title">Add Time</h4>
-            <p class="card-text">Click on the Add Time link for an Item above. Then enter an amount of time (in minutes) you spent on that item in the input field below, and click the button to add the time to the item.</p>
-            <input class="form-control" type="number" placeholder="add minutes">
-            <button type="submit" name="button" class="btn btn-primary" style="margin: 1rem 0 0;">Add Time</button>
-          </div>
-        </div>
-
-        <div class="card col" style="margin: 1rem; padding: 0 -1rem;">
-          <img class="card-img-top" src="http://s2.dmcdn.net/MKoQw/1280x720-DWQ.jpg" alt="pie chart">{{!-- piechart JS stuff --}}
-        </div>
-      </div>
+<div class="row">
+  {{outlet}}
+  {{!-- <div class="card col" style="margin: 1rem; padding: 0 -1rem;">
+    <div class="card-block">
+      <h4 class="card-title">Add Time</h4>
+      <p class="card-text">Click on the Add Time link for an Item above. Then enter an amount of time (in minutes)
+         you spent on that item in the input field below, and click the button to add the time to the item.</p>
+      <input class="form-control" type="number" placeholder="add minutes">
+      <button type="submit" name="button" class="btn btn-primary" style="margin: 1rem 0 0;">Add Time</button>
+    </div>
+  </div> --}}
+  <div class="card col" style="margin: 1rem; padding: 0 -1rem;">
+    <img class="card-img-top" src="http://s2.dmcdn.net/MKoQw/1280x720-DWQ.jpg" alt="pie chart">{{!-- piechart JS stuff --}}
+  </div>
+</div>
 
 
     </div> {{!-- section --}}

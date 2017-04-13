@@ -1,38 +1,159 @@
 
 .wrapper-nb {
-  background-color: $c-justBeige;
+  background-color: $c-paleCarrot;
   height: 100vh;
   color: $c-hospitalScrubs;
+  overflow: hidden;
+  position: relative;
 }
 
-h1 {
-  color: $c-hospitalScrubs;
-  font-size: 3rem;
-  margin-bottom: 3rem;
+.form-nb {
+  padding: 1rem;
+    width: 100%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+
 }
-form {
+
+  .container-nb {
+    z-index: 10;
+    background-color: $c-agedPorcelain;
+    padding: 0;
+    height: 75vh;
+    width: 40%;
+    transform: translate(0, 18%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+
+    form {
+      margin-bottom: 0;
+    }
+  }
+
+
+.background-img {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-left: 100vw solid transparent;
+  border-right: 100vw solid transparent;
+  border-bottom: 120vh solid $c-hospitalScrubs;
+}
+
+.background-img-sm {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 35%;
+  border-top: 60vw solid $c-lobsterBisque;
+  border-right: 100vw solid transparent;
+  border-left: 100vh solid transparent;
+
+}
+
+.input-nb {
+  border: none;
+  background-color: $c-agedPorcelain;
   width: 100%;
+  border-bottom: .15rem solid $c-hospitalScrubs;
+  padding: 2rem 0 0.25rem 0.25rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: normal;
+  font-size: 1.25rem;
+  &:focus {
+    outline: 0;
+    background-color: darken($c-agedPorcelain, 5%);
+  }
+
 }
 
-p {
-  font-size: 1.5rem;
-}
-
-.btn {
-  background-color: $c-soiledPearl;
-  font-family: 'Amatica SC', cursive;
+.btn-register {
+  background-color: $c-hospitalScrubs;
+  color: $c-agedPorcelain;
+  font-family:  'Amatica SC', cursive;
+  font-weight: 700;
   font-size: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 50%;
+  border-radius: 0;
+  &:hover {
+    background-color: lighten($c-hospitalScrubs, 7%);
+    color: $c-agedPorcelain;
+  }
 }
+
+.btn-login {
+  background-color: $c-agedPorcelain;
+  color: $c-hospitalScrubs;
+  font-family:  'Amatica SC', cursive;
+  font-weight: 700;
+  font-size: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 50%;
+  &:hover {
+    background-color: darken($c-agedPorcelain, 7%);
+    color: $c-hospitalScrubs;
+  }
+}
+
+.btn-next {
+  background-color: $c-hospitalScrubs;
+  color: $c-agedPorcelain;
+  font-size: 1rem;
+  width: 25%;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  border-radius: 2rem;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+  &:hover {
+    background-color: lighten($c-hospitalScrubs, 7%);
+    color: $c-agedPorcelain;
+  }
+}
+
+.btn-container {
+  display: flex;
+  width: 100%;
+
+}
+
+// h1 {
+//   color: $c-hospitalScrubs;
+//   font-size: 3rem;
+//   margin-bottom: 3rem;
+// }
+
+.bottom-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4rem 0 0 0;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
 
 .register {
   color: $c-lobsterBisque;
-  font-weight: bold;
 
 }
 
-.container-nb {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
+
+// .container-nb {
+//   height: 100vh;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }

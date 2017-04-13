@@ -22,8 +22,11 @@ export default Ember.Controller.extend({
           password: this.get('model.password'),
         });
       } catch (err) {
-        const e = err;
-        this.set('errorMessage', err.error.message);
+        if (err) {
+          this.set('errorMessage', err.errors[0].title);
+        } else {
+          console.error('Authentication failed!');
+        }
       }
     },
   },

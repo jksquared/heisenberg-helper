@@ -1,39 +1,38 @@
 <div class="wrapper-nb">
-  <div class="container">
+  <div class="background-img-sm"></div>
+    <div class="background-img"></div>
 
-    <h1 class="title--nb">Heisenberger Helper</h1>
-    <div class="grid--nb">
-
-      <div class="row">
-        <div class="left--nb col align-self-center">
-          <h3>Welcome to Heisenberger Helper!</h3>
-          <img src="https://s-media-cache-ak0.pinimg.com/736x/63/0f/0e/630f0ef3f6f3126ca11f19f4a9b85243.jpg" alt="" class="pic--nb">
-          <p>You can use this site to track your habits!</p>
-        </div>
-
-        {{#with (changeset model validator) as |formValues|}}
-          <div class="right--nb col col-md-auto form-wrapper-nb">
-            <form class="form-nb" {{action "registerUser" formValues on="submit"}}>
-              <h3>Register</h3>
-              <div class="input-container-nb">
-                {{#form-input changeset=formValues class="form-control" label="Email address" property="email"}}{{/form-input}}
-              </div>
-              <div class="input-container-nb">
-                {{#form-input changeset=formValues type="password" label="Password" property="password"}}{{/form-input}}
-              </div>
-              <small class="text-muted">(Password must be at least 6 characters long.)</small>
-              <div class="bottom--nb">
-                <button class="btn btn-primary">Sign Up</button>
-                <a href="/login">Already have an account?</a>
-              </div>
-            </form>
-          </div>
-        {{/with}}
-
-      </div>
-
+  <div class="content">
+    <div class="quote">
+      <h3>This is where some inpirational quote
+      that Justin likes will go. He probably found it on his tea,
+      and it'll say like live, love laugh or something like that.</h3>
     </div>
 
+
+    <div class="container-Nb container">
+        <div class="btn-container">
+          {{#link-to 'register' class="btn btn-login"}}Register{{/link-to}}
+          {{#link-to 'login' class="btn btn-Login"}}login{{/link-to}}
+        </div>
+        {{#with (changeset model validator) as |formValues|}}
+            <form class="form-Nb" {{action "registerUser" formValues on="submit"}}>
+              <div class="input-container-nb register-input">
+                {{#form-input changeset=formValues class="form-control" label="Email address" property="email"}}{{/form-input}}
+              </div>
+              <div class="input-container-nb register-input">
+                {{#form-input changeset=formValues type="password" class="form-control" label="Password" property="password"}}{{/form-input}}
+              </div>
+              <small class="text-muted">(Password must be at least 6 characters long.)</small>
+              <div class=" bottom-container">
+                <button type="submit" class="btn btn-Next">Next</button>
+                <p>
+                  Need an account? {{#link-to 'login' class="register"}} Login Here{{/link-to}}
+                </p>
+              </div>
+            </form>
+        {{/with}}
+      </div>
   </div>
 </div>
 
