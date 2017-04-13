@@ -12,19 +12,16 @@
 
     <div class="container-Nb container">
         <div class="btn-container">
+          {{#link-to 'register' class="btn btn-login"}}Register{{/link-to}}
           {{#link-to 'login' class="btn btn-Login"}}login{{/link-to}}
-          <button type="submit" class="btn btn-Register">register</button>
         </div>
-        {{#with (changeset model) as |formValues|}}
+        {{#with (changeset model validator) as |formValues|}}
             <form class="form-Nb" {{action "registerUser" formValues on="submit"}}>
               <div class="input-container-nb register-input">
-                {{input type="text" value=formValues.name placeholder="name" class="input-nb"}}
+                {{#form-input changeset=formValues class="form-control" label="Email address" property="email"}}{{/form-input}}
               </div>
               <div class="input-container-nb register-input">
-                {{input type="text" value=formValues.email placeholder="email" class="input-nb"}}
-              </div>
-              <div class="input-container-nb register-input">
-                {{input type="password" value=formValues.password placeholder="password" class="input-nb"}}
+                {{#form-input changeset=formValues type="password" class="form-control" label="Password" property="password"}}{{/form-input}}
               </div>
               <small class="text-muted">(Password must be at least 6 characters long.)</small>
               <div class=" bottom-container">
