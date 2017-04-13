@@ -100,9 +100,9 @@
 
 }
 
-.btn-register {
-  background-color: $c-hospitalScrubs;
-  color: $c-agedPorcelain;
+.btn-Register {
+  background-color: $c-agedPorcelain;
+  color: $c-hospitalScrubs;
   font-family:  'Amatica SC', cursive;
   font-weight: 700;
   font-size: 2rem;
@@ -113,25 +113,27 @@
   line-height: 1;
 
   &:hover {
-    background-color: lighten($c-hospitalScrubs, 7%);
-    color: $c-agedPorcelain;
+    background-color: darken($c-agedPorcelain, 7%);
+    color: $c-hospitalScrubs;
   }
 }
 
-.btn-login {
-  background-color: $c-agedPorcelain;
-  color: $c-hospitalScrubs;
+.btn-Login {
+  background-color: $c-hospitalScrubs;
+  color: $c-agedPorcelain;
   font-family:  'Amatica SC', cursive;
   font-weight: 700;
   font-size: 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  border-radius: 0;
   width: 50%;
   line-height: 1;
 
   &:hover {
-    background-color: darken($c-agedPorcelain, 7%);
-    color: $c-hospitalScrubs;
+    background-color: lighten($c-hospitalScrubs, 7%);
+    color: $c-agedPorcelain;
+
   }
 }
 

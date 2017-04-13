@@ -12,8 +12,8 @@
 
     <div class="container-Nb container">
         <div class="btn-container">
-          {{#link-to 'register' class="btn btn-register"}}Register{{/link-to}}
-          <button type="submit" class="btn btn-login">Log In</button>
+          {{#link-to 'login' class="btn btn-Login"}}login{{/link-to}}
+          <button type="submit" class="btn btn-Register">register</button>
         </div>
         {{#with (changeset model) as |formValues|}}
             <form class="form-Nb" {{action "registerUser" formValues on="submit"}}>
@@ -30,7 +30,7 @@
               <div class=" bottom-container">
                 <button type="submit" class="btn btn-Next">Next</button>
                 <p>
-                  Need an account? {{#link-to 'register' class="register"}} Register Here{{/link-to}}
+                  Need an account? {{#link-to 'login' class="register"}} Login Here{{/link-to}}
                 </p>
               </div>
             </form>
