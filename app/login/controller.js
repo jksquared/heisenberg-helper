@@ -23,7 +23,7 @@ export default Ember.Controller.extend({
         });
       } catch (err) {
         if (err) {
-          this.set('errorMessage', err.error.message);
+          this.set('errorMessage', err.errors[0].title);
         } else {
           console.error('Authentication failed!');
         }
