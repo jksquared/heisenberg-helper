@@ -1,15 +1,19 @@
 import {
   validatePresence,
-  validateFormat
+  validateFormat,
+  validateLength
 } from 'ember-changeset-validations/validators';
 
 
 export default {
-  name: validatePresence(true),
   email: [
     validatePresence(true),
     validateFormat({ type: 'email' }),
   ],
-  password: validatePresence(true),
+  password: [
+    validatePresence(true),
+    validateLength({ min: 6 })
+  ],
+
 
 };

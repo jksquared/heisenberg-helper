@@ -1,12 +1,18 @@
 import Ember from 'ember';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
+export default Ember.Route.extend({
+  session: Ember.inject.service(),
 
-export default Ember.Route.extend(AuthenticatedRouteMixin, {
+  beforeModel() {
+    if (!this.get('session.isAuthenticated')) {
+      // alert('Register for an account or login here');
 
-  setupController(controller) {
-    this._super(...arguments);
-
-    controller.resetNewItem();
+      this.transitionTo('login');
+    }
+  },
+  model() {
+    return this.store.findAll('item');
   }
+
 });

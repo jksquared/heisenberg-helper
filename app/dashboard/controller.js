@@ -1,17 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  formValues: {},
-  isShowingModal: false,
   session: Ember.inject.service(),
-
-  resetNewItem() {
-    this.set('newItem', {});
-  },
 
   actions: {
     invalidateSession() {
       this.get('session').invalidate();
+      this.transitionToRoute('login');
     },
 
     async addItem() {
@@ -27,6 +22,10 @@ export default Ember.Controller.extend({
 
     toggleModal() {
       this.toggleProperty('isShowingModal');
-    }
-  }
+    },
+
+    deleteItem(item) {
+      item.destroyRecord();
+    },
+  },
 });
