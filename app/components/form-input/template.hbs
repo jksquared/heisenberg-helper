@@ -1,6 +1,6 @@
 <div class="form-group has-feedback
   {{if (get changeset.error property) "has-error"}}">
-  <input type="{{type}}" class="form-control" placeholder="{{label}}"
+  <input type="{{type}}" class="form-control input-nb" placeholder="{{label}}"
          value={{get changeset property}}
          oninput={{action (mut (get changeset property)) value="target.value"}}>
   {{yield}}
