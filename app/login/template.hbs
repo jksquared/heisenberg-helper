@@ -5,18 +5,18 @@
   <div class="container-nb container">
     <div class="btn-container">
       {{#link-to 'register' class="btn btn-register"}}Register{{/link-to}}
-      <button type="submit" class="btn btn-login">Log In</button>
+      {{#link-to 'login' class="btn btn-login"}}Log In{{/link-to}}
     </div>
     {{#with (changeset model validator) as |formValues|}}
     <form class="form-nb" {{ action "loginUser" formValues on="submit"}}>
       <h2>{{errorMessage}}</h2>
       <div class="form-group">
         {{!-- <label for="exampleInputEmail1">Email address</label> --}}
-        {{#form-input changeset=formValues class="input-nb" placeholder="Email Address" label="Email address" property="email"}}{{/form-input}}
+        {{#form-input changeset=formValues placeholder="Email Address" label="Email address" property="email"}}{{/form-input}}
       </div>
       <div class="form-group">
         {{!-- <label for="exampleInputPassword1">Password</label> --}}
-        {{#form-input class="input-nb" changeset=formValues type="password" placeholder="Password" label="Password" property="password"}}{{/form-input}}
+        {{#form-input changeset=formValues type="password" placeholder="Password" label="Password" property="password"}}{{/form-input}}
      </div>
       <div class=" bottom-container">
         <button type="submit" class="btn btn-next">Next</button>
