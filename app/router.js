@@ -12,7 +12,7 @@ Router.map(function () {
   this.route('dashboard', function () {
     this.route('item', { path: '/items' }, function () {
       this.route('new');
-      this.route('detail', { path: '/:item_id' }, function () {
+      this.route('detail', { path: '/:id' }, function () {
         this.route('new');
       });
     });

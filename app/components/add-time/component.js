@@ -1,24 +1,21 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
-  session: Ember.inject.service(),
+export default Ember.Component.extend({
+  // store: Ember.inject.service(),
+  tagName: '',
+  type: 'text',
   formValues: {
     time: '',
   },
 
+  model() {
+    return {};
+  },
+
   actions: {
-    invalidateSession() {
-      this.get('session').invalidate();
-    },
-
-    deleteItem(item) {
-      item.destroyRecord();
-    },
-
     addTime() {
       const time = this.store.createRecord('time', this.formValues);
 
-      // this.model is the model from 'project/detail'
       time.set('item', this.model);
 
       return time.save().then(() => {
