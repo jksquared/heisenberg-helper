@@ -10,11 +10,9 @@ Router.map(function () {
   this.route('register');
   this.route('login');
   this.route('dashboard', function () {
+    this.route('add-time', { path: '/item/:item_id/new-time' });
     this.route('item', { path: '/items' }, function () {
       this.route('new');
-      this.route('detail', { path: '/:item_id' }, function () {
-        this.route('new');
-      });
     });
   });
 });

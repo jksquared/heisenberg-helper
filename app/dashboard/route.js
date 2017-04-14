@@ -15,17 +15,4 @@ export default Ember.Route.extend({
   model() {
     return this.store.findAll('item');
   },
-
-// model() {
-//   const id = this.paramsFor('dashboard.item').id;
-//
-//   return this.store.findRecord('item', id);
-// }
-
-  // model(params) {
-  //   const id = params.id;
-  //
-  //   return this.store.findRecord('item', id);
-  // }
-
 });
