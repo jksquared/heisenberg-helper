@@ -1,0 +1,50 @@
+<div class="wrapper-nb--db">
+  <div class="container">
+    <div class="section">
+
+      <div class="row justify-content-between">
+        <div class="card col col-sm-2" style="margin: 1rem;">
+          <h4 class="card--words">Hello!</h4>
+          {{#link-to "dashboard.item.new" class="btn btn-primary"}}Add New Item{{/link-to}}
+        </div>
+
+        <div class="card col col-sm-2" style="margin: 1rem;">
+          <h4 class="card--words">Done here?</h4>
+          <button {{action 'invalidateSession'}} class="btn btn-primary">Log out</button>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <h4 class="card-header">List of Items
+          <h6>(click on an item to see more)</h6>
+        </h4>
+        <div class="card-block">
+          {{#bs-accordion as |acc|}}
+          {{#each model as |item|}}
+            {{#acc.item value=item.id title=item.item}}
+              <p>Category: {{item.category}}</p>
+              <p>Times: {{model.duration}}</p>
+              {{#link-to "dashboard.add-time" item class="btn btn-primary"}}Add New Time{{/link-to}}
+              <button class="btn btn-danger" {{action "deleteItem" item}}>Delete Item</button>
+            {{/acc.item}}
+
+            {{/each}}
+          {{/bs-accordion}}
+
+        </div>
+      </div>
+
+      <div class="row">
+        {{outlet}}
+
+        <div class="card col" style="margin: 1rem; padding: 0 -1rem;">
+          <img class="card-img-top" src="http://s2.dmcdn.net/MKoQw/1280x720-DWQ.jpg" alt="pie chart">{{!-- piechart JS stuff --}}
+        </div>
+
+      </div>
+
+
+    </div> {{!-- section --}}
+  </div> {{!-- container --}}
+</div>
