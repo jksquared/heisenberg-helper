@@ -1,21 +1,15 @@
 {{outlet}}
 <div class="wrapper-nb">
+
+  <div class="navbar">
+    <div class="navbar-header">
+      {{#link-to "dashboard.item.new" class="btn btn-primary"}}Add New Item{{/link-to}}
+      <button {{action 'invalidateSession'}} class="btn btn-primary">Log out</button>
+    </div>
+  </div>
+
   <div class="container">
     <div class="section">
-
-      <div class="row justify-content-between">
-        <div class="card col col-sm-2" style="margin: 1rem;">
-          <h4 class="card--words">Hello!</h4>
-          {{#link-to "dashboard.item.new" class="btn btn-primary"}}Add New Item{{/link-to}}
-        </div>
-
-        <div class="card col col-sm-2" style="margin: 1rem;">
-          <h4 class="card--words">Done here?</h4>
-          <button {{action 'invalidateSession'}} class="btn btn-primary">Log out</button>
-        </div>
-      </div>
-
-
       <div class="card">
         <h4 class="card-header">List of Items
           <h6>(click on an item to see more)</h6>
