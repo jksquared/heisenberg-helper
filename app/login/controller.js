@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
       await changeset.validate();
 
       if (changeset.get('isInvalid')) {
-        return alert('Make better decisions with this form');
+        return alert('Invalid login information');
       }
 
       await changeset.save();
