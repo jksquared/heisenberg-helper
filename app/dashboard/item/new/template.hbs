@@ -1,7 +1,7 @@
 {{#modal-dialog close="toggleModal"
                 targetAttachment="center"
                 translucentOverlay=true}}
-  <div class="container">
+  <div class="container modal">
     {{#with (changeset model) as |formValues|}}
 
       <form {{action "addItem" formValues on="submit"}}>
@@ -12,7 +12,7 @@
         <div class="form-group">
           {{#form-input class="form-control" label="category" changeset=formValues property="category"}}{{/form-input}}
        </div>
-      <div class="form-group d-flex justify-content-between align-items-end">
+      <div class="form-group d-flex">
         <button type="submit" class="btn btn-primary btn-block btn-flat">Add Item</button>
       </div>
       </form>

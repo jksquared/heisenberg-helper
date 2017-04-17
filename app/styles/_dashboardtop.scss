@@ -3,16 +3,28 @@
 }
 
 .wrapper-nb--db {
-  background-color: $c-soiledPearl;
   min-height: 100vh;
-  color: $c-hospitalScrubs;
-  overflow: hidden;
-  position: relative;
+    color: #113B43;
+    overflow: hidden;
+    position: relative;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    position: relative;
+    z-index: 3;
 }
 
 .navbar {
   padding: 2rem 0;
-  background-color: $c-agedPorcelain;
+  background-color: $c-dirtierPearl;
   margin-bottom: 3rem;
 }
 
@@ -25,19 +37,22 @@
   font-family:  'Amatica SC', cursive;
   font-size: 3rem;
   font-weight: 700;
+  color: $c-agedPorcelain;
 }
 
 .btn-dashboard {
-  background-color: $c-hospitalScrubs;
-  color: $c-agedPorcelain;
-  font-family:  'Amatica SC', cursive;
-  font-weight: 700;
-  font-size: 2rem;
+  background-color: $c-agedPorcelain;
+  color: $c-soiledPearl;
+  font-size: 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
   outline: 0;
+  border: 0;
+  border-radius: 0;
   &:hover {
-    background-color: lighten($c-hospitalScrubs, 7%);
-    color: $c-agedPorcelain;
+    background-color: darken($c-agedPorcelain, 5%);
+    color: $c-soiledPearl;
   }
 }
