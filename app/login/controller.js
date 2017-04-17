@@ -22,6 +22,7 @@ export default Ember.Controller.extend({
           password: this.get('model.password'),
         });
       } catch (err) {
+        console.log('oops', err)
         if (err) {
           this.set('errorMessage', err.errors[0].title);
         } else {
