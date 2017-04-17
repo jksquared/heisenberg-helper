@@ -26,6 +26,8 @@
               <p>Category: {{item.category}}</p>
               <p>Times: {{model.duration}}</p>
               {{#link-to "dashboard.add-time" item class="btn btn-primary"}}Add New Time{{/link-to}}
+              {{#link-to "dashboard.item.edit" item class="btn btn-success"}}Edit Item{{/link-to}}
+              {{!-- need to fix --}}
               <button class="btn btn-danger" {{action "deleteItem" item}}>Delete Item</button>
             {{/acc.item}}
 

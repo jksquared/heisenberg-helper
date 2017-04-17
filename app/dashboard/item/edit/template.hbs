@@ -1,0 +1,24 @@
+{{#modal-dialog close="toggleModal"
+                targetAttachment="center"
+                translucentOverlay=true}}
+  <div class="container">
+    {{#link-to "dashboard" class="float-right"}}X{{/link-to}}
+    {{#with (changeset model) as |formValues|}}
+
+
+  <form {{action "editItem" formValues on="submit"}}>
+    <h1 class="title text-center">Edit Item</h1>
+    <div class="form-group">
+      {{#form-input class="form-control edit" label="item" changeset=formValues property="item" value="item"}}{{/form-input}}
+    </div>
+    <div class="form-group">
+      {{#form-input class="form-control edit" label="category" changeset=formValues property="category" value="category"}}{{/form-input}}
+   </div>
+  <div class="form-group d-flex justify-content-between align-items-end">
+    <button type="submit" class="btn btn-primary btn-block btn-flat">Edit Item</button>
+  </div>
+  </form>
+
+    {{/with}}
+  </div>
+{{/modal-dialog}}
