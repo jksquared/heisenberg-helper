@@ -1,6 +1,10 @@
 .card-header-grey {
-  background-color: $c-soiledPearl;
+  background-color: $c-dirtierPearl;
   color: $c-agedPorcelain;
+  border-radius: 0;
+}
+
+.card-header:first-child {
   border-radius: 0;
 }
 
@@ -38,8 +42,8 @@
   padding-bottom: 2rem;
 }
 
-.btn-table {
 
+.btn-table {
     background-color: $c-soiledPearl;
     color: $c-agedPorcelain;
     font-size: 1rem;
@@ -48,6 +52,7 @@
     border-radius: 0;
     width: 25%;
     line-height: 1;
+
 
     &:hover {
       background-color: lighten($c-soiledPearl, 7%);

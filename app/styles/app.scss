@@ -16,4 +16,11 @@ $c-agedPorcelain: #faebd7;
 @import 'register';
 @import 'dashboardtop';
 @import 'dashboard-table';
+@import 'timer';
 @import 'modal';
+
+
+* {
+  font-family: 'Catamaran', sans-serif;
+  // font-weight: 200;
+}

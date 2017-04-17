@@ -5,7 +5,7 @@
       <div class="navbar-header">
         <h4 class="header">Heisenberg Helper</h4>
         <div>
-          {{#link-to "dashboard.item.new" class="btn btn-dashboard" }}Add New Item{{/link-to}}
+          {{#link-to "dashboard.item.new" class="btn btn-dashboard" }}New Item{{/link-to}}
           <button {{action 'invalidateSession'}} class="btn btn-dashboard">Log out</button>
         </div>
       </div>
@@ -23,6 +23,10 @@
               <div class="card-block accordion">
                 {{#bs-accordion as |acc|}}
                   {{#each model as |item|}}
+                  <div>
+                  <button class="btn btn-table" {{action "deleteItem" item}}>Delete</button>
+                  {{#link-to "dashboard.add-time" item class="btn btn-table"}}Add Time{{/link-to}}
+                  </div>
                     {{#acc.item value=item.id title=item.item}}
                       <p>Category: {{item.category}}</p>
                       <p>Times:

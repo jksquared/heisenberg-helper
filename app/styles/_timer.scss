@@ -1,0 +1,45 @@
+.cntr {
+  text-align: center;
+
+  h4 {
+    margin-top: .5rem;
+  }
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-cancel {
+  background-color: lighten($c-lobsterBisque, 5%);;
+  color: $c-agedPorcelain;
+  font-size: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0;
+  width: 25%;
+  line-height: 1;
+
+
+  &:hover {
+    background-color: darken($c-lobsterBisque, 7%);
+    color: $c-agedPorcelain;
+  }
+}
+
+.btn-add {
+  background-color: lighten($c-hospitalScrubs, 10%);;
+  color: $c-agedPorcelain;
+  font-size: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0;
+  line-height: 1;
+
+
+  &:hover {
+    background-color: darken($c-hospitalScrubs, 7%);
+    color: $c-agedPorcelain;
+  }
+}
