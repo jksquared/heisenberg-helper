@@ -21,6 +21,7 @@
     "ember-bootstrap": "^1.0.0-alpha.9",
     "ember-changeset": "^1.2.3",
     "ember-changeset-validations": "^1.2.6",
+    "ember-charts": "^1.2.1",
     "ember-cli": "~2.13.0-beta.3",
     "ember-cli-app-version": "^3.0.0",
     "ember-cli-babel": "^6.0.0-beta.3",

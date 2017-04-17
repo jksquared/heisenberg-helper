@@ -24,7 +24,14 @@
           {{#each model as |item|}}
             {{#acc.item value=item.id title=item.item}}
               <p>Category: {{item.category}}</p>
-              <p>Times: {{model.duration}}</p>
+              <p>Times:
+                <ul>
+                {{#each item.durations as |duration|}}
+                  <li>{{duration.time}} minutes</li>
+                {{/each}}
+              </ul>
+              </p>
+
               {{#link-to "dashboard.add-time" item class="btn btn-primary"}}Add New Time{{/link-to}}
               <button class="btn btn-danger" {{action "deleteItem" item}}>Delete Item</button>
             {{/acc.item}}
