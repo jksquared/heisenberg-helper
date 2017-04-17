@@ -3,9 +3,41 @@
 }
 
 .wrapper-nb--db {
-  background-color: $c-paleCarrot;
-  // height: 100vh;
+  background-color: $c-soiledPearl;
+  min-height: 100vh;
   color: $c-hospitalScrubs;
   overflow: hidden;
   position: relative;
+}
+
+.navbar {
+  padding: 2rem 0;
+  background-color: $c-agedPorcelain;
+  margin-bottom: 3rem;
+}
+
+.navbar-header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header {
+  font-family:  'Amatica SC', cursive;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.btn-dashboard {
+  background-color: $c-hospitalScrubs;
+  color: $c-agedPorcelain;
+  font-family:  'Amatica SC', cursive;
+  font-weight: 700;
+  font-size: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  outline: 0;
+  &:hover {
+    background-color: lighten($c-hospitalScrubs, 7%);
+    color: $c-agedPorcelain;
+  }
 }
