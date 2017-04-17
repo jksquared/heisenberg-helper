@@ -1,0 +1,23 @@
+.card-header-orange {
+  background-color: $c-hospitalScrubs;
+  color: $c-agedPorcelain;
+}
+
+.card-block {
+  background-color: $c-agedPorcelain;
+  margin: 0;
+}
+.accordion .card {
+  .card-header {
+    background: $c-lobsterBisque;
+  }
+
+  &:nth-child(odd) .card-header {
+    background: $c-hospitalScrubs;
+  }
+}
+
+.row {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}

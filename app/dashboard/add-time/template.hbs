@@ -1,15 +1,16 @@
-<div class="card col" style="margin: 1rem; padding: 0 -1rem;">
+<div class="card">
   <div class="card-block">
-    <h4 class="card-title">Add Time</h4>
+    <h4 class="card-title">Add Time for {{model.item}}</h4>
     <p class="card-text">Click on the Add Time link for an Item above. Then enter an amount of time (in minutes)
        you spent on that item in the input field below, and click the button to add the time to the item.</p>
-       {{#with (changeset model) as |formValues|}}
+       {{#with (changeset formValues validator) as |formValues|}}
          <form {{action "addTime" formValues on="submit"}}>
            <h1 class="title text-center">Add Time</h1>
            <div class="form-group">
              {{#form-input class="form-control" type="number" label="add minutes" changeset=formValues property="time"}}{{/form-input}}
            </div>
          <div class="form-group d-flex justify-content-between align-items-end">
+           {{#link-to "dashboard" class="btn btn-block btn-success"}}Cancel{{/link-to}}
            <button type="submit" class="btn btn-primary btn-block btn-flat">Add New Time</button>
          </div>
          </form>
