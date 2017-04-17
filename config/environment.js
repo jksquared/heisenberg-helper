@@ -21,7 +21,7 @@ module.exports = function (environment) {
       widthSensitive: true,
       heightSensitive: true,
       debounceTimeout: 200,
-      injectionFactories: ['view', 'component']
+      injectionFactories: ['component']
     },
 
     EmberENV: {
