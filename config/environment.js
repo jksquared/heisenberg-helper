@@ -1,7 +1,8 @@
 /* eslint-env node */
+
 'use strict';
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   const ENV = {
     DS: {
       host: 'http://localhost:3333',
@@ -14,6 +15,13 @@ module.exports = function(environment) {
     'ember-simple-auth': {
       authorizer: 'authorizer:token',
       authenticationRoute: 'login',
+    },
+
+    resizeServiceDefaults: {
+      widthSensitive: true,
+      heightSensitive: true,
+      debounceTimeout: 200,
+      injectionFactories: ['view', 'component']
     },
 
     EmberENV: {

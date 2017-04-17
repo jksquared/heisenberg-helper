@@ -1,0 +1,20 @@
+{{#ember-sparkles
+  data=pieData
+  output-key='sites'
+  group-key='name'
+  arc-threshold=10
+  arc-precision=2
+  group-domain=(map-by 'name' pieData)
+  as |chart|}}
+
+  {{chart.pie-chart}}
+
+  {{chart.legend
+    shape='circle'
+    dx=chart.width
+    shape-spacing=30
+    shape-size=10
+    text-dx=18
+    text-dy=4
+  }}
+{{/ember-sparkles}}
