@@ -1,3 +1,6 @@
+.btn-new {
+  float: right;
+}
 .card-header-grey {
   background-color: $c-dirtierPearl;
   color: $c-agedPorcelain;
@@ -24,6 +27,23 @@
 .acc-container {
   display: flex;
   flex-direction: row-reverse;
+
+}
+
+.table-content {
+  display: flex;
+  // width: ;
+}
+
+.card-header {
+  font-size: 2rem;
+  font-family: 'Amatica SC', cursive;
+  border-bottom: none;
+  margin-bottom: .5rem;
+  h6 {
+    margin-top: .5rem;
+    font-family: 'Catamaran', sans-serif;
+  }
 }
 
 
@@ -61,8 +81,8 @@
 
 
 .btn-table {
-    background-color: $c-soiledPearl;
-    color: $c-agedPorcelain;
+    background-color: $c-agedPorcelain;
+    color: $c-dirtierPearl;
     font-size: 1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -72,7 +92,7 @@
 
 
     &:hover {
-      background-color: lighten($c-soiledPearl, 7%);
+      background-color: lighten($c-lobsterBisque, 7%);
       color: $c-agedPorcelain;
 
     }
