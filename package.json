@@ -19,6 +19,7 @@
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^2.4.1",
     "ember-bootstrap": "^1.0.0-alpha.9",
+    "ember-browserify": "^1.1.13",
     "ember-changeset": "^1.2.3",
     "ember-changeset-validations": "^1.2.6",
     "ember-charts": "^1.2.1",
@@ -55,6 +56,6 @@
   "private": true,
   "dependencies": {
     "eslint-config-rtablada": "^4.1.0",
-    "lodash": "^4.17.4"
+    "trianglify": "^1.0.1"
   }
 }

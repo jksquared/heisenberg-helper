@@ -1,23 +1,62 @@
-.card-header-orange {
-  background-color: $c-hospitalScrubs;
+.card-header-grey {
+  background-color: $c-dirtierPearl;
   color: $c-agedPorcelain;
+  border-radius: 0;
+}
+
+.card-header:first-child {
+  border-radius: 0;
+}
+
+.card {
+  border: none;
+  border-radius: 0;
 }
 
 .card-block {
   background-color: $c-agedPorcelain;
   margin: 0;
+  color: $c-dirtierPearl;
+  border-radius: 0;
 }
+
 .accordion .card {
+  border-radius: 0;
   .card-header {
-    background: $c-lobsterBisque;
+    background: $c-agedPorcelain;
+    border-radius: 0;
+    a { color: $c-dirtierPearl;
+    }
   }
 
   &:nth-child(odd) .card-header {
-    background: $c-hospitalScrubs;
+    background: $c-soiledPearl;
+    border-radius: 0;
+    a { color: $c-agedPorcelain;
+    }
   }
 }
 
 .row {
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 5rem;
+}
+
+
+.btn-table {
+    background-color: $c-soiledPearl;
+    color: $c-agedPorcelain;
+    font-size: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 0;
+    width: 25%;
+    line-height: 1;
+
+
+    &:hover {
+      background-color: lighten($c-soiledPearl, 7%);
+      color: $c-agedPorcelain;
+
+    }
 }
