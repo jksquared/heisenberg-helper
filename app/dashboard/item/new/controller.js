@@ -2,8 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   formValues: {},
-  // isShowingModal: false,
-
 
   actions: {
     addItem(changeset) {
@@ -13,8 +11,6 @@ export default Ember.Controller.extend({
       item.save();
 
       this.transitionToRoute('dashboard');
-      // transitionToRoute needs to be changed to wait for the add item button to be clicked.
-      // This is activating the closeOutlet function.
     },
 
     toggleModal() {

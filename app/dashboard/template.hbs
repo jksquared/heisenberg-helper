@@ -4,7 +4,7 @@
     <div class="navbar-header">
       <h4 class="header">Heisenberg Helper</h4>
       <div>
-        {{#link-to "dashboard.item.new" class="btn btn-dashboard" }}Add New Item{{/link-to}}
+        {{#link-to "dashboard.item.new" class="btn btn-dashboard"}}Add New Item{{/link-to}}
         <button {{action 'invalidateSession'}} class="btn btn-dashboard">Log out</button>
       </div>
     </div>
@@ -16,7 +16,7 @@
         <div class="col">
           <div class="card">
             <h4 class="card-header card-header-orange">List of Items
-            <h6>(click on an item to see more)</h6>
+            <h6>(click on an item to see more information)</h6>
           </h4>
             <div class="card-block">
               {{#bs-accordion class="accordion" as |acc|}}
@@ -26,7 +26,7 @@
                     <p>Times: </p>
                     {{#link-to "dashboard.add-time" item class="btn btn-primary" }}Add New Time{{/link-to}}
                     {{#link-to "dashboard.item.edit" item class="btn btn-success"}}Edit Item{{/link-to}}
-                    <button class="btn btn-danger" {{action "deleteItem" item}}>future delete item button</button>
+                    <button class="btn btn-danger" {{action "deleteItem" item}}>Delete Item</button>
                   {{/acc.item}}
                 {{/each}}
               {{/bs-accordion}}

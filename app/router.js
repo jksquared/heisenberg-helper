@@ -14,8 +14,6 @@ Router.map(function () {
     this.route('item', { path: '/items' }, function () {
       this.route('new');
       this.route('edit', { path: '/:item_id/edit' });
-          // copied this from Razer Cars
-          // this.route('edit', { path: '/:brand_id/edit' });
     });
 
     this.route('detail', () => {});
