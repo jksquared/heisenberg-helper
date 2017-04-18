@@ -1,4 +1,24 @@
-.modal {
-  position: relative;
-  z-index: 5;
+
+.ember-modal-dialog {
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+
+}
+
+.close {
+  padding: .5rem;
+}
+
+
+.card {
+  background-color: $c-agedPorcelain;
+
+
+  h5 {
+    font-size: 2rem;
+    padding: .5rem;
+    margin: .25rem;
+  }
+
 }
