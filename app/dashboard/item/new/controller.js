@@ -1,10 +1,10 @@
 import Ember from 'ember';
+import validator from './validator';
 
 export default Ember.Controller.extend({
   formValues: {},
-  // isShowingModal: false,
 
-
+  validator,
   actions: {
     addItem(changeset) {
       changeset.save();
@@ -13,12 +13,10 @@ export default Ember.Controller.extend({
       item.save();
 
       this.transitionToRoute('dashboard');
-      // transitionToRoute needs to be changed to wait for the add item button to be clicked.
-      // This is activating the closeOutlet function.
     },
 
     toggleModal() {
       this.transitionToRoute('dashboard');
-    }
+    },
   }
 });

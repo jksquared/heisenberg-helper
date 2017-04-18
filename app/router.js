@@ -14,7 +14,10 @@ Router.map(function () {
     this.route('timer', { path: '/item/:item_id/timer' });
     this.route('item', { path: '/items' }, function () {
       this.route('new');
+      this.route('edit', { path: '/:item_id/edit' });
     });
+
+    this.route('detail', () => {});
   });
 });
 export default Router;
