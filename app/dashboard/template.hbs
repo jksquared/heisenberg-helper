@@ -23,10 +23,6 @@
               <div class="card-block accordion">
                 {{#bs-accordion as |acc|}}
                   {{#each model as |item|}}
-                  <div>
-                  <button class="btn btn-table" {{action "deleteItem" item}}>Delete</button>
-                  {{#link-to "dashboard.add-time" item class="btn btn-table"}}Add Time{{/link-to}}
-                  </div>
                     {{#acc.item value=item.id title=item.item}}
                       <p>Category: {{item.category}}</p>
                       <p>Times:
@@ -37,6 +33,7 @@
                         </ul>
                       </p>
                       {{#link-to "dashboard.add-time" item class="btn btn-table"}}Add New Time{{/link-to}}
+                      {{#link-to "dashboard.timer" item class="btn btn-table"}}Add Timer{{/link-to}}
                       <button class="btn btn-table" {{action "deleteItem" item}}>Delete Item</button>
                     {{/acc.item}}
                   {{/each}}
@@ -46,9 +43,10 @@
           </div>
         </div>
         <div class="row">
-          <div class="col">{{outlet}}</div>
-
-        {{log unwrappedModel}}
+          <div class="col">
+            {{outlet}}
+            {{outlet 'timer'}}
+          </div>
 
         <div class="col">
           <div class="card">
