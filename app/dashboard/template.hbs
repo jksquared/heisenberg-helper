@@ -16,18 +16,20 @@
         <div class="row">
           <div class="col">
             <div class="card table-card">
-              <h4 class="card-header card-header-grey">List of Items
-              <h6>(click on an item to see more)</h6>
-
+                <h4 class="card-header card-header-grey">List of Items
+                <h6>(click on an item to see more)</h6>
+                {{#link-to "dashboard.item.new" class="btn btn-dashboard btn-new" }}New Item{{/link-to}}
             </h4>
               <div class="card-block accordion">
                 {{#bs-accordion as |acc|}}
                   {{#each model as |item|}}
-                  <div>
-                  <button class="btn btn-table" {{action "deleteItem" item}}>Delete</button>
-                  {{#link-to "dashboard.add-time" item class="btn btn-table"}}Add Time{{/link-to}}
+                  <div class="acc-container">
+                  <div class="btn-container-table">
+                    <button class="btn btn-table" {{action "deleteItem" item}}>Delete</button>
+                    {{#link-to "dashboard.add-time" item class="btn btn-table"}}Add Time{{/link-to}}
                   </div>
                     {{#acc.item value=item.id title=item.item}}
+                    <div class="table-content">
                       <p>Category: {{item.category}}</p>
                       <p>Times:
                         <ul>
@@ -36,9 +38,9 @@
                           {{/each}}
                         </ul>
                       </p>
-                      {{#link-to "dashboard.add-time" item class="btn btn-table"}}Add New Time{{/link-to}}
-                      <button class="btn btn-table" {{action "deleteItem" item}}>Delete Item</button>
+                      </div>
                     {{/acc.item}}
+                  </div>
                   {{/each}}
                 {{/bs-accordion}}
               </div>
@@ -48,11 +50,28 @@
         <div class="row">
           <div class="col">{{outlet}}</div>
 
-          <div class="col">
-            <div class="card"><img class="card-img-top" src="http://s2.dmcdn.net/MKoQw/1280x720-DWQ.jpg" alt="pie chart">{{!-- piechart JS stuff --}}</div>
+        {{log unwrappedModel}}
+
+        <div class="col">
+          <div class="card">
+            <div class="pie-chart">
+              <h2>Pie Chart</h2>
+              {{#ember-sparkles
+                data=unwrappedModel
+                output-key='totalTime'
+                group-key='item'
+                arc-threshold=10
+                arc-precision=2
+                group-domain=(map-by 'item' unwrappedModel)
+                as |chart|}}
+
+                {{chart.pie-chart}}
+              {{/ember-sparkles}}
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 {{/trianglify-canvas}}
