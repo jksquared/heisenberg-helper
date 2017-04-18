@@ -5,10 +5,11 @@ export default Ember.Component.extend({
   classNames: ['canvas'],
   didInsertElement() {
     this._super(...arguments);
+    // debugger;
 
     const pattern = Trianglify({
-      height: 1250,
-      width: 1430,
+      height: this.element.scrollHeight,
+      width: this.element.scrollWidth,
       cell_size: 250,
       seed: '2qc5n',
       variance: '0.97',

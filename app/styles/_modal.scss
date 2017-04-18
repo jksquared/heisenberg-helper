@@ -3,19 +3,59 @@
   padding: 0;
   border-radius: 0;
   box-shadow: none;
+  width: calc(100% - 4rem);
+  max-width: 50rem;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
 
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .close {
-  padding: .5rem;
+  padding: .5rem .5rem 0 0;
+  float: right;
+  color: $c-dirtierPearl;
 }
+
+.modal-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-modal {
+  background-color: $c-soiledPearl;
+  color: $c-agedPorcelain;
+  font-size: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0;
+  width: 25%;
+  line-height: 1;
+  margin: 1rem 0;
+}
+
+
 
 
 .card {
   background-color: $c-agedPorcelain;
 
 
-  h5 {
+
+  form {
+    margin: 0 5rem;
+  }
+
+
+  h3 {
+    font-family: 'Amatica SC', cursive;
     font-size: 2rem;
     padding: .5rem;
     margin: .25rem;
