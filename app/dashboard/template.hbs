@@ -1,46 +1,58 @@
-<div class="wrapper-nb--db">
+{{#trianglify-canvas}}
+  <div class="wrapper-nb--db">
 
-  <div class="navbar">
-    <div class="navbar-header">
-      <h4 class="header">Heisenberg Helper</h4>
-      <div>
-        {{#link-to "dashboard.item.new" class="btn btn-dashboard"}}Add New Item{{/link-to}}
-        <button {{action 'invalidateSession'}} class="btn btn-dashboard">Log out</button>
+    <div class="navbar">
+      <div class="navbar-header">
+        <h4 class="header">Heisenberg Helper</h4>
+        <div>
+          {{#link-to "dashboard.item.new" class="btn btn-dashboard" }}New Item{{/link-to}}
+          <button {{action 'invalidateSession'}} class="btn btn-dashboard">Log out</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="container">
-    <div class="section">
-      <div class="row">
-        <div class="col">
-          <div class="card">
-            <h4 class="card-header card-header-orange">List of Items
-            <h6>(click on an item to see more information)</h6>
-          </h4>
-            <div class="card-block">
-              {{#bs-accordion class="accordion" as |acc|}}
-                {{#each model as |item|}}
-                  {{#acc.item value=item.id title=item.item}}
-                    <p>Category: {{item.category}}</p>
-                    <p>Times: </p>
-                    {{#link-to "dashboard.add-time" item class="btn btn-primary" }}Add New Time{{/link-to}}
-                    {{#link-to "dashboard.item.edit" item class="btn btn-success"}}Edit Item{{/link-to}}
-                    <button class="btn btn-danger" {{action "deleteItem" item}}>Delete Item</button>
-                  {{/acc.item}}
-                {{/each}}
-              {{/bs-accordion}}
+    <div class="container">
+      <div class="section">
+        <div class="row">
+          <div class="col">
+            <div class="card table-card">
+              <h4 class="card-header card-header-grey">List of Items
+              <h6>(click on an item to see more)</h6>
+
+            </h4>
+              <div class="card-block accordion">
+                {{#bs-accordion as |acc|}}
+                  {{#each model as |item|}}
+                  <div>
+                  <button class="btn btn-table" {{action "deleteItem" item}}>Delete</button>
+                  {{#link-to "dashboard.add-time" item class="btn btn-table"}}Add Time{{/link-to}}
+                  </div>
+                    {{#acc.item value=item.id title=item.item}}
+                      <p>Category: {{item.category}}</p>
+                      <p>Times:
+                        <ul>
+                          {{#each item.durations as |duration|}}
+                          <li>{{duration.time}} minutes</li>
+                          {{/each}}
+                        </ul>
+                      </p>
+                      {{#link-to "dashboard.add-time" item class="btn btn-table"}}Add New Time{{/link-to}}
+                      <button class="btn btn-table" {{action "deleteItem" item}}>Delete Item</button>
+                    {{/acc.item}}
+                  {{/each}}
+                {{/bs-accordion}}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">{{outlet}}</div>
+        <div class="row">
+          <div class="col">{{outlet}}</div>
 
-        <div class="col">
-          <div class="card"><img class="card-img-top" src="http://s2.dmcdn.net/MKoQw/1280x720-DWQ.jpg" alt="pie chart">{{!-- piechart JS stuff --}}</div>
+          <div class="col">
+            <div class="card"><img class="card-img-top" src="http://s2.dmcdn.net/MKoQw/1280x720-DWQ.jpg" alt="pie chart">{{!-- piechart JS stuff --}}</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+{{/trianglify-canvas}}

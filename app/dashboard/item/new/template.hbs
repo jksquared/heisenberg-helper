@@ -1,24 +1,24 @@
 {{#modal-dialog close="toggleModal"
                 targetAttachment="center"
                 translucentOverlay=true}}
-  <div class="container">
-    {{#link-to "dashboard" class="float-right"}}X{{/link-to}}
-    {{#with (changeset model validator) as |formValues|}}
-
-
-  <form {{action "addItem" formValues on="submit"}}>
-    <h1 class="title text-center">Add an Item</h1>
-    <div class="form-group">
-      {{#form-input class="form-control" label="item" changeset=formValues property="item"}}{{/form-input}}
+  <div class="card modal-card">
+    <div class="card-header card-header-grey cntr">
+      <h5 class="card-title">Add an Item</h5>
     </div>
-    <div class="form-group">
-      {{#form-input class="form-control" label="category" changeset=formValues property="category"}}{{/form-input}}
-   </div>
-  <div class="form-group d-flex justify-content-between align-items-end">
-    <button type="submit" class="btn btn-primary btn-block btn-flat">Add Item</button>
-  </div>
-  </form>
+    {{#link-to "dashboard" class="close"}}X{{/link-to}}
+    {{#with (changeset model) as |formValues|}}
 
+      <form {{action "addItem" formValues on="submit"}}>
+        <div class="form-group">
+          {{#form-input class="form-control" label="item" changeset=formValues property="item"}}{{/form-input}}
+        </div>
+        <div class="form-group">
+          {{#form-input class="form-control" label="category" changeset=formValues property="category"}}{{/form-input}}
+       </div>
+      <div class="form-group d-flex">
+        <button type="submit" class="btn btn-primary btn-block btn-flat">Add Item</button>
+      </div>
+      </form>
     {{/with}}
   </div>
 {{/modal-dialog}}

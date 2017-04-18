@@ -1,9 +1,11 @@
 $c-hospitalScrubs: #113B43;
 $c-justBeige: rgba(#f6d8b1,.67);
 $c-soiledPearl: #9C9B83;
+$c-dirtierPearl: #4e4d46;
 $c-paleCarrot: #FF974F;
 $c-lobsterBisque: #E04825;
 $c-agedPorcelain: #faebd7;
+
 
 
 @import "ember-modal-dialog/ember-modal-structure";
@@ -14,4 +16,11 @@ $c-agedPorcelain: #faebd7;
 @import 'register';
 @import 'dashboardtop';
 @import 'dashboard-table';
-@import 'background';
+@import 'timer';
+@import 'modal';
+
+
+* {
+  font-family: 'Catamaran', sans-serif;
+  // font-weight: 200;
+}
