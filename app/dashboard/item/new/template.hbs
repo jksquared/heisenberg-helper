@@ -3,7 +3,7 @@
                 translucentOverlay=true}}
   <div class="container">
     {{#link-to "dashboard" class="float-right"}}X{{/link-to}}
-    {{#with (changeset model) as |formValues|}}
+    {{#with (changeset model validator) as |formValues|}}
 
 
   <form {{action "addItem" formValues on="submit"}}>

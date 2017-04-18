@@ -1,8 +1,10 @@
 import Ember from 'ember';
+import validator from './validator';
 
 export default Ember.Controller.extend({
   formValues: {},
 
+  validator,
   actions: {
     addItem(changeset) {
       changeset.save();
