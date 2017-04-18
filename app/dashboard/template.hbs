@@ -26,6 +26,7 @@
                   <div class="acc-container">
                   <div class="btn-container-table">
                     <button class="btn btn-table" {{action "deleteItem" item}}>Delete</button>
+                    {{#link-to "dashboard.timer" item class="btn btn-table"}}Add Timer{{/link-to}}
                     {{#link-to "dashboard.add-time" item class="btn btn-table"}}Add Time{{/link-to}}
                   </div>
                     {{#acc.item value=item.id title=item.item}}
@@ -38,9 +39,7 @@
                           {{/each}}
                         </ul>
                       </p>
-                      {{#link-to "dashboard.add-time" item class="btn btn-table"}}Add New Time{{/link-to}}
-                      {{#link-to "dashboard.timer" item class="btn btn-table"}}Add Timer{{/link-to}}
-                      <button class="btn btn-table" {{action "deleteItem" item}}>Delete Item</button>
+                    </div>
                     {{/acc.item}}
                   </div>
                   {{/each}}
