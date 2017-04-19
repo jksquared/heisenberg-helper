@@ -5,27 +5,18 @@
     <div class="card-block">
     <p class="card-text">Start the timer to keep track of the amount of time (in minutes)
        you spent on this item below. Stop the timer and click the submit button to add the new time to this item.</p>
-        {{#if isResetState}}
-          {{timeElapsed}}
-          <button {{action 'start'}} class='start'>Start</button>
-        {{/if}}
 
-        {{#if isRunState}}
-          {{timeElapsed}}
-          <button {{action 'pause'}}>Pause</button>
-          <button {{action 'stop'}}>Stop</button>
-        {{/if}}
+    {{#if duration}}
+      You logged {{moment-duration duration}}.
+      <button {{action 'save'}}>Submit</button>
+    {{else}}
+      {{#if startTime}}
+        {{moment-from-now startTime interval=100 hideSuffix=true}}
 
-        {{#if isPauseState}}
-          {{timeElapsed}}
-          <button {{action 'start'}}>Start</button>
-          <button {{action 'submit'}}>Submit</button>
-          <button {{action 'reset'}}>Reset</button>
-        {{/if}}
-
-        {{#if isLapState}}
-          {{lapTime}}
-          <button {{action 'resume'}}>Resume</button>
-        {{/if}}
+        <button {{action 'stop'}}>Stop</button>
+      {{else}}
+        <button {{action 'start'}}>Start</button>
+      {{/if}}
+    {{/if}}
   </div>
 </div>

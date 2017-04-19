@@ -1,57 +1,46 @@
 import Ember from 'ember';
+import moment from 'moment';
 
 export default Ember.Component.extend({
 
-  state: 'reset',
-
-  timeElapsed: 0,
-  lapTime: 0,
-
-  isResetState: Ember.computed.equal('state', 'reset'),
-  isRunState: Ember.computed.equal('state', 'run'),
-  isPauseState: Ember.computed.equal('state', 'pause'),
-  isLapState: Ember.computed.equal('state', 'lap'),
-
-  incrementTimeElapsed(startDate) {
-    const currentDate = new Date();
-    if (this.get('isRunState') || this.get('isLapState')) {
-      this.incrementProperty('timeElapsed', currentDate.valueOf() - startDate.valueOf());
-      Ember.run.next(this, 'incrementTimeElapsed', new Date());
-    }
-  },
+  startTime: null,
+  duration: null,
 
   actions: {
     start() {
-      this.set('state', 'run');
-      this.incrementTimeElapsed(new Date());
+      this.set('startTime', moment());
     },
 
     stop() {
-      this.set('state', 'pause');
+      this.set('duration', this.get('startTime').diff(moment()));
     },
 
     reset() {
-      this.set('state', 'reset');
-      this.set('timeElapsed', 0);
+      // this.set('state', 'reset');
+      // this.set('timeElapsed', 0);
     },
 
     pause() {
-      this.set('lapTime', this.get('timeElapsed'));
-      this.set('state', 'lap');
+      // this.set('lapTime', this.get('timeElapsed'));
+      // this.set('state', 'lap');
     },
 
     resume() {
-      this.set('state', 'run');
+      // this.set('state', 'run');
     },
 
-    submit() {
-      const time = this.set('lapTime', this.get('timeElapsed'));
+    save() {
+      const ms = this.get('duration');
 
-      time.set('item', this.model);
+      // convert from ms to mins (maybe moment will help)
 
-      return time.save().then(() => {
-        this.transitionToRoute('dashboard');
-      });
+      // Create a new duration model and save
+
+      // time.set('item', this.model);
+      //
+      // return time.save().then(() => {
+      //   this.transitionToRoute('dashboard');
+      // });
     },
   },
 });
