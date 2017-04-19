@@ -44,9 +44,8 @@ export default Ember.Component.extend({
       this.set('state', 'run');
     },
 
-    submit(changeset) {
-      changeset.save();
-      const time = this.store.createRecord('duration', this.formValues);
+    submit() {
+      const time = this.set('lapTime', this.get('timeElapsed'));
 
       time.set('item', this.model);
 

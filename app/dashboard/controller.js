@@ -21,6 +21,10 @@ export default Ember.Controller.extend({
       item.destroyRecord();
     },
 
+    deleteTime(time) {
+      time.destroyRecord();
+    },
+
     addTime() {
       const time = this.store.createRecord('time', this.formValues);
 
