@@ -16,8 +16,7 @@ export default Ember.Component.extend({
     },
 
     reset() {
-      // this.set('state', 'reset');
-      this.set('startTime', 0);
+      // this.set('duration', this.get('startTime').diff(moment()));
     },
 
     pause() {
@@ -26,21 +25,20 @@ export default Ember.Component.extend({
     },
 
     resume() {
-      // this.set('state', 'run');
+
     },
 
     save() {
-      const ms = this.get('duration');
-
-      // convert from ms to mins (maybe moment will help)
+      const durr = this.get('startTime').diff(moment());
 
       // Create a new duration model and save
+      const time = this.store.createRecord('duration', this.durr);
 
-      // time.set('item', this.model);
-      //
-      // return time.save().then(() => {
-      //   this.transitionToRoute('dashboard');
-      // });
+      time.set('item', this.model);
+
+      return time.save().then(() => {
+        this.transitionToRoute('dashboard');
+      });
     },
   },
 });

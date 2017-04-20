@@ -16,5 +16,9 @@ export default Helper.extend({
     const durr = moment.duration(diff);
 
     return format(diff);
-  }
+  },
+
+  clearTimer() {
+    clearTimeout(this.intervalTimer);
+  },
 });
