@@ -7,8 +7,6 @@ export default Ember.Controller.extend({
   },
 
   unwrappedModel: Ember.computed('model.@each.totalTime', function () {
-    console.log('Hello');
-
     return this.model.map(x => x.toJSON());
   }),
 
@@ -19,6 +17,14 @@ export default Ember.Controller.extend({
 
     deleteItem(item) {
       item.destroyRecord();
+    },
+
+    async deleteTime(time) {
+      const item = await time.get('item');
+
+      await time.destroyRecord();
+
+      item.reload();
     },
 
     addTime() {

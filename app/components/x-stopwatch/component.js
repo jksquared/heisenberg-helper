@@ -1,52 +1,38 @@
 import Ember from 'ember';
+import moment from 'moment';
 
 export default Ember.Component.extend({
 
-  state: 'reset',
-
-  timeElapsed: 0,
-  lapTime: 0,
-
-  isResetState: Ember.computed.equal('state', 'reset'),
-  isRunState: Ember.computed.equal('state', 'run'),
-  isPauseState: Ember.computed.equal('state', 'pause'),
-  isLapState: Ember.computed.equal('state', 'lap'),
-
-  incrementTimeElapsed(startDate) {
-    const currentDate = new Date();
-    if (this.get('isRunState') || this.get('isLapState')) {
-      this.incrementProperty('timeElapsed', currentDate.valueOf() - startDate.valueOf());
-      Ember.run.next(this, 'incrementTimeElapsed', new Date());
-    }
-  },
+  startTime: null,
+  duration: null,
 
   actions: {
     start() {
-      this.set('state', 'run');
-      this.incrementTimeElapsed(new Date());
+      this.set('startTime', moment());
     },
 
     stop() {
-      this.set('state', 'pause');
+      this.set('duration', this.get('startTime').diff(moment()));
     },
 
     reset() {
-      this.set('state', 'reset');
-      this.set('timeElapsed', 0);
+      // this.set('duration', this.get('startTime').diff(moment()));
     },
 
     pause() {
-      this.set('lapTime', this.get('timeElapsed'));
-      this.set('state', 'lap');
+      // this.set('lapTime', this.get('timeElapsed'));
+      // this.set('state', 'lap');
     },
 
     resume() {
-      this.set('state', 'run');
+
     },
 
-    submit(changeset) {
-      changeset.save();
-      const time = this.store.createRecord('duration', this.formValues);
+    save() {
+      const durr = this.get('startTime').diff(moment());
+
+      // Create a new duration model and save
+      const time = this.store.createRecord('duration', this.durr);
 
       time.set('item', this.model);
 

@@ -16,26 +16,35 @@
         <div class="row">
           <div class="col">
             <div class="card table-card">
-                <h4 class="card-header card-header-grey">List of Items
-                <h6>(click on an item to see more)</h6>
-                {{#link-to "dashboard.item.new" class="btn btn-dashboard btn-new" }}New Item{{/link-to}}
-            </h4>
+                <div class="card-header card-header-grey">
+                  <div class="card-header__left">
+                    <h2>List of Items</h2>
+                    <p>(click on an item to see more)</p>
+                  </div>
+                  <div class="card-header_right">
+                    {{#link-to "dashboard.item.new" class="btn btn-dashboard" }}New Item{{/link-to}}
+                  </div>
+                </div>
               <div class="card-block accordion">
                 {{#bs-accordion as |acc|}}
                   {{#each model as |item|}}
                   <div class="acc-container">
                   <div class="btn-container-table">
                     <button class="btn btn-table" {{action "deleteItem" item}}>Delete</button>
+                    {{#link-to "dashboard.item.edit" item class="btn btn-table"}}Edit Item{{/link-to}}
                     {{#link-to "dashboard.timer" item class="btn btn-table"}}Add Timer{{/link-to}}
                     {{#link-to "dashboard.add-time" item class="btn btn-table"}}Add Time{{/link-to}}
                   </div>
                     {{#acc.item value=item.id title=item.item}}
                     <div class="table-content">
                       <p>Category: {{item.category}}</p>
+                      <p>Total Time: {{item.totalTime}}</p>
                       <p>Times:
                         <ul>
                           {{#each item.durations as |duration|}}
-                          <li>{{duration.time}} minutes</li>
+                          <li>{{duration.time}} minutes
+                            <button {{action "deleteTime" duration}}>X</button>
+                          </li>
                           {{/each}}
                         </ul>
                       </p>
@@ -58,17 +67,17 @@
           <div class="card">
             <div class="pie-chart">
               <h2>Pie Chart</h2>
-              {{#ember-sparkles
-                data=unwrappedModel
-                output-key='totalTime'
-                group-key='item'
-                arc-threshold=10
-                arc-precision=2
-                group-domain=(map-by 'item' unwrappedModel)
-                as |chart|}}
+                {{#ember-sparkles
+                  data=unwrappedModel
+                  output-key='totalTime'
+                  group-key='item'
+                  arc-threshold=10
+                  arc-precision=2
+                  group-domain=(map-by 'item' unwrappedModel)
+                  as |chart|}}
 
-                {{chart.pie-chart}}
-              {{/ember-sparkles}}
+                  {{chart.pie-chart}}
+                {{/ember-sparkles}}
             </div>
           </div>
         </div>
