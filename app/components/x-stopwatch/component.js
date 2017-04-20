@@ -17,7 +17,7 @@ export default Ember.Component.extend({
 
     reset() {
       // this.set('state', 'reset');
-      // this.set('timeElapsed', 0);
+      this.set('startTime', 0);
     },
 
     pause() {

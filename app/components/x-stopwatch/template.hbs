@@ -9,9 +9,11 @@
     {{#if duration}}
       You logged {{moment-duration duration}}.
       <button {{action 'save'}}>Submit</button>
+      {{!-- <button {{action 'reset'}}>Reset</button> --}}
     {{else}}
       {{#if startTime}}
-        {{moment-from-now startTime interval=100 hideSuffix=true}}
+
+        {{moment-clock startTime interval=100}}
 
         <button {{action 'stop'}}>Stop</button>
       {{else}}

@@ -58,6 +58,7 @@
   "private": true,
   "dependencies": {
     "eslint-config-rtablada": "^4.1.0",
+    "format-duration": "^1.0.0",
     "trianglify": "^1.0.1"
   }
 }
