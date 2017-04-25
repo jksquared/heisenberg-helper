@@ -16,13 +16,17 @@ export default Ember.Component.extend({
       x_colors: ['#2a454b', '#649688', '#405952', '#9C9B7A', '#FF974F', '#F54F29', '#902d16', '#2a454b', '#d22d2d'],
     });
 
-    const svg = this.$('svg');
+    const svg = this.$('svg.triangles');
 
     if (svg.length) {
       svg.remove();
     }
 
-    this.element.appendChild(pattern.svg());
+    const svgT = pattern.svg();
+
+    svgT.classList.add('triangles');
+
+    this.element.appendChild(svgT);
   },
 
   didInsertElement() {

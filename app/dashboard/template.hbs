@@ -1,27 +1,27 @@
 {{#trianglify-canvas}}
-  <div class="wrapper-nb--db">
+<div class="wrapper-nb--db">
 
-    <div class="navbar">
-      <div class="navbar-header">
-        <h4 class="header">Heisenberg Helper</h4>
-        <div>
-          {{#link-to "dashboard.item.new" class="btn btn-dashboard" }}New Item{{/link-to}}
-          <button {{action 'invalidateSession'}} class="btn btn-dashboard">Log out</button>
-        </div>
+  <div class="navbar">
+    <div class="navbar-header">
+      <h4 class="header">Heisenberg Helper</h4>
+      <div>
+        {{#link-to "dashboard.item.new" class="btn btn-dashboard" }}New Item{{/link-to}}
+        <button {{action 'invalidateSession'}} class="btn btn-dashboard">Log out</button>
       </div>
     </div>
+  </div>
 
-    <div class="container">
-      <div class="section">
-        <div class="row">
-          <div class="col">
-            <div class="card table-card">
-                <div class="card-header card-header-grey">
-                  <div class="card-header__left">
-                    <h2>List of Items</h2>
-                    <p>(click on an item to see more)</p>
-                  </div>
-                </div>
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col">
+          <div class="card table-card">
+            <div class="card-header card-header-grey">
+              <div class="card-header__left">
+                <h2>List of Items</h2>
+                <p>(click on an item to see more)</p>
+              </div>
+            </div>
               <div class="card-block accordion">
                 {{#bs-accordion as |acc|}}
                   {{#each model as |item|}}
