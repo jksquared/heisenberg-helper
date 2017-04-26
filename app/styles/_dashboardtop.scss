@@ -29,7 +29,7 @@ svg:not(:root) {
 .navbar {
   padding: 2rem 0;
   background-color: $c-dirtierPearl;
-  margin-bottom: 5rem;
+  margin-bottom: 2.5rem;
 
   h4 {
     margin-left: 3rem;
@@ -51,7 +51,8 @@ svg:not(:root) {
 
 .btn-dashboard {
   background-color: $c-agedPorcelain;
-  color: $c-soiledPearl;
+  color: $c-dirtierPearl;
+  font-style: inherit;
   font-size: 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -61,7 +62,11 @@ svg:not(:root) {
   border: 0;
   border-radius: 0;
   &:hover {
-    background-color: darken($c-agedPorcelain, 5%);
-    color: $c-soiledPearl;
+    background-color: lighten($c-lobsterBisque, 7%);
+    color: $c-agedPorcelain;
   }
+}
+
+button {
+  font-family: inherit;
 }
