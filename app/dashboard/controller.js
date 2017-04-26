@@ -15,9 +15,20 @@ export default Ember.Controller.extend({
       this.get('session').invalidate();
     },
 
-    deleteItem(item) {
-      item.destroyRecord();
+    deleteAfterConfirm(item) {
+      if (confirm('Are you sure you want to delete this item? All times associated with this item will be deleted as well.')) {
+        item.destroyRecord();
+      }
     },
+
+    // showModal(targetId) {
+    //   const modal = Ember.Views.views[targetId];
+    //   modal.send('toggleModal');
+    // },
+
+    // deleteItem(item) {
+    //   item.destroyRecord();
+    // },
 
     async deleteTime(time) {
       const item = await time.get('item');

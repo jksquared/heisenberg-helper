@@ -1,7 +1,18 @@
+.card-header--pc {
+  display: flex;
+  justify-content: center;
+}
+
 .pie-chart {
   display: flex;
   justify-content: center;
-  margin: 1rem auto;
+  margin: -1rem auto;
   height: 30rem;
   width: 30rem;
+}
+
+svg text {
+  font-size: 1.5rem;
+  // color: $c-agedPorcelain;
+  fill: $c-agedPorcelain;
 }

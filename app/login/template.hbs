@@ -5,7 +5,7 @@
   <div class="container-nb container">
     <div class="btn-container">
       {{#link-to 'register' class="btn btn-register"}}Register{{/link-to}}
-      {{#link-to 'login' class="btn btn-login"}}Log In{{/link-to}}
+      {{#link-to 'login' class="btn btn-login"}}Login{{/link-to}}
     </div>
     {{#with (changeset model validator) as |formValues|}}
     <form class="form-nb" {{ action "loginUser" formValues on="submit"}}>

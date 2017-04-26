@@ -51,7 +51,8 @@ svg:not(:root) {
 
 .btn-dashboard {
   background-color: $c-agedPorcelain;
-  color: $c-soiledPearl;
+  color: $c-dirtierPearl;
+  font-style: inherit;
   font-size: 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -61,7 +62,7 @@ svg:not(:root) {
   border: 0;
   border-radius: 0;
   &:hover {
-    background-color: darken($c-agedPorcelain, 5%);
-    color: $c-soiledPearl;
+    background-color: lighten($c-lobsterBisque, 7%);
+    color: $c-agedPorcelain;
   }
 }

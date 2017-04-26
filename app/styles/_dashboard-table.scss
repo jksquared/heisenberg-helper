@@ -42,8 +42,6 @@
   }
 }
 
-
-
 .accordion .card {
   border-radius: 0;
   .card-header {
@@ -66,13 +64,16 @@
   padding-bottom: 5rem;
 }
 
+.btn {
+  cursor: pointer;
+  outline: none;
+}
+
 .btn-container-table {
   flex: 1 0 auto;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
-
-
 }
 
 
@@ -90,6 +91,25 @@
     &:hover {
       background-color: lighten($c-lobsterBisque, 7%);
       color: $c-agedPorcelain;
-
     }
+}
+
+.btn-table--del {
+    background-color: $c-agedPorcelain;
+    color: $c-dirtierPearl;
+    padding: 0 0.2rem;
+    border-radius: 0;
+    margin-left: 1rem;
+
+
+    &:hover {
+      background-color: lighten($c-lobsterBisque, 7%);
+      color: $c-agedPorcelain;
+    }
+}
+
+.card-title {
+  h4 {
+
+  }
 }

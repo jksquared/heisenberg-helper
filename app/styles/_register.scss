@@ -100,7 +100,7 @@
   font-family:  'Amatica SC', cursive;
   font-weight: 700;
   font-size: 2rem;
-  padding-top: 1rem;
+  // padding-top: 1rem;
   padding-bottom: 1rem;
   width: 50%;
   border-radius: 0;
@@ -124,7 +124,7 @@
   border-radius: 0;
   width: 50%;
   outline: 0;
-  // line-height: 1rem;
+  line-height: 1rem;
 
   &:hover {
     background-color: lighten($c-hospitalScrubs, 7%);
