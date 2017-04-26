@@ -26,14 +26,13 @@
               {{#bs-accordion as |acc|}}
                 {{#each model as |item|}}
                 <div class="acc-container">
-
                 <div class="btn-container-table">
                   <div class="moment">added a {{moment-duration}} ago</div>
                   <div class="not-moment">
                     {{#link-to "dashboard.add-time" item class="btn btn-table"}}Log Time{{/link-to}}
                     {{#link-to "dashboard.timer" item class="btn btn-table"}}Timer{{/link-to}}
                     {{#link-to "dashboard.item.edit" item class="btn btn-table"}}Edit Item{{/link-to}}
-                    <button class="btn btn-table" {{action 'deleteAfterConfirm' item 'modal-main'}}>Delete</button>
+                    <button class="btn btn-table" {{action 'deleteItem' item 'modal-main'}}>Delete</button>
                   </div>
                 </div>
                   {{#acc.item value=item.id title=item.item}}

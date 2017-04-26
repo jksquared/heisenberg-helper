@@ -14,6 +14,22 @@ export default Ember.Controller.extend({
       this.set('duration', this.get('startTime').diff(moment()));
     },
 
+    save() {
+      const dur = this.set('duration', parseInt((-(this.get('startTime').diff(moment()))) / 60000));
+
+      // Create a new duration model and save
+      const time = this.store.createRecord('duration', {
+        time: dur
+      });
+
+
+      time.set('item', this.model);
+
+      time.save().then(() => {
+        this.transitionToRoute('dashboard');
+      });
+    },
+
     reset() {
       this.set('duration', this.set('startTime'), moment());
     },
@@ -23,24 +39,8 @@ export default Ember.Controller.extend({
     },
 
     resume() {
-      // const resume = this.set('duration', this.set('startTime').diff(moment()));
-      // this.set('startTime', resume);
+      this.set(-(this.get('startTime').diff(moment())), moment());
     },
 
-    async save() {
-      // changeset.save();
-      const item = this.model;
-      const durr = this.set('duration', parseInt((-(this.get('startTime').diff(moment()))) / 60000));
-
-      // Create a new duration model and save
-      const time = this.store.createRecord('duration', durr);
-
-
-      await time.set('item', item);
-
-      await time.save().then(() => {
-        this.transitionToRoute('dashboard');
-      });
-    },
   },
 });

@@ -4,7 +4,7 @@
   </div>
     <div class="card-block">
     <p class="card-text">Enter the amount of time (in minutes)
-       you spent using {{model.item}}, and click the button to add the new time.</p>
+       you spent {{model.item}}, and click the button to add the new time.</p>
        {{#with (changeset formValues validator) as |formValues|}}
          <form {{action "addTime" formValues on="submit"}}>
            <div class="form-group">

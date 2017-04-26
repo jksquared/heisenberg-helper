@@ -12,10 +12,12 @@ export default Ember.Controller.extend({
 
   actions: {
     invalidateSession() {
-      this.get('session').invalidate();
+      if (confirm('Are you sure you want to log out?')) {
+        this.get('session').invalidate();
+      }
     },
 
-    deleteAfterConfirm(item) {
+    deleteItem(item) {
       if (confirm('Are you sure you want to delete this item? All times associated with this item will be deleted as well.')) {
         item.destroyRecord();
       }
