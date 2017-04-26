@@ -12,3 +12,18 @@ img {
   align-self: center;
   max-width: 100%;
 }
+
+* {
+  font-family: 'Catamaran', sans-serif;
+  // font-weight: 200;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Amatica SC', sans-serif;
+}
+
+.btn:focus, .btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+  color: $c-dirtierPearl !important;
+}

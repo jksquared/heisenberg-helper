@@ -29,7 +29,7 @@ svg:not(:root) {
 .navbar {
   padding: 2rem 0;
   background-color: $c-dirtierPearl;
-  margin-bottom: 5rem;
+  margin-bottom: 2.5rem;
 
   h4 {
     margin-left: 3rem;
@@ -65,4 +65,8 @@ svg:not(:root) {
     background-color: lighten($c-lobsterBisque, 7%);
     color: $c-agedPorcelain;
   }
+}
+
+button {
+  font-family: inherit;
 }

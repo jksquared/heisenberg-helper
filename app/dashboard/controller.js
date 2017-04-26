@@ -21,11 +21,6 @@ export default Ember.Controller.extend({
       }
     },
 
-    // showModal(targetId) {
-    //   const modal = Ember.Views.views[targetId];
-    //   modal.send('toggleModal');
-    // },
-
     // deleteItem(item) {
     //   item.destroyRecord();
     // },

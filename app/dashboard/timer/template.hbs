@@ -8,18 +8,18 @@
 
     {{#if duration}}
       You logged {{moment-duration duration}}.
-      <button {{action 'save'}}>Submit</button>
-      <button {{action 'reset'}}>Reset</button>
-      <button {{action 'resume'}}>Resume</button>
+      <button class="btn" {{action 'save'}}>Submit</button>
+      <button class="btn" {{action 'reset'}}>Reset</button>
+      <button class="btn" {{action 'resume'}}>Resume</button>
     {{else}}
       {{#if startTime}}
 
         {{moment-clock startTime interval=100}}
 
-        <button {{action 'stop'}}>Stop</button>
-        <button {{action 'pause'}}>Pause</button>
+        <button class="btn" {{action 'stop'}}>Stop</button>
+        <button class="btn" {{action 'pause'}}>Pause</button>
       {{else}}
-        <button {{action 'start'}}>Start</button>
+        <button class="btn" {{action 'start'}}>Start</button>
       {{/if}}
     {{/if}}
   </div>

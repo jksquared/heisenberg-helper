@@ -20,16 +20,7 @@ $c-agedPorcelain: #faebd7;
 @import 'modal';
 @import 'pie-chart';
 
-
-* {
-  font-family: 'Catamaran', sans-serif;
-  // font-weight: 200;
+.moment {
+  align-self: center;
+  font-size: 0.5rem;
 }
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Amatica SC', sans-serif;
-}
-
-// .pie-chart .twitter {
-//   fill: #FF974F !important;
-// }
