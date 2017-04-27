@@ -61,7 +61,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.DS.host = 'https://heisenberg-api.herokuapp.com';
   }
 
   ENV['ember-simple-auth-token'] = {

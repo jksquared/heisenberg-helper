@@ -36,6 +36,23 @@
   padding-bottom: 1rem;
   border-radius: 0;
   line-height: 1;
+  width: 25%;
+
+
+  &:hover {
+    background-color: darken($c-hospitalScrubs, 7%);
+    color: $c-agedPorcelain;
+  }
+}
+
+.btn-add--manual {
+  background-color: lighten($c-hospitalScrubs, 10%);;
+  color: $c-agedPorcelain;
+  font-size: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0;
+  line-height: 1;
 
 
   &:hover {

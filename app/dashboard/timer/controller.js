@@ -26,7 +26,7 @@ export default Ember.Controller.extend({
       time.set('item', this.model);
 
       time.save().then(() => {
-        this.transitionToRoute('dashboard');
+        this.set('duration', this.set('startTime'), moment());
       });
     },
 
